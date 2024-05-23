@@ -23,7 +23,11 @@ class EventController extends Controller
         })->paginate(5);
 
 
-        return view('events.index', compact('events'));
+        if($request->expectsJson()){
+            return response()->json($events);
+        }else {
+            return view('events.index', compact('events'));
+        }
     }
 
     /**

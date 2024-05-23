@@ -13,10 +13,15 @@ class NumberClientController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $numbers = NumberClient::all();
-        return view('numbers.index', compact('numbers'));
+
+        if($request->expectsJson()){
+            return response()->json($numbers);
+        }else {
+            return view('numbers.index', compact('numbers'));
+        }
     }
 
     /**

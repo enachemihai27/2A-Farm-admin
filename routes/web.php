@@ -24,7 +24,6 @@ require __DIR__.'/auth.php';
 
 
 /*Route::middleware('auth')->group(function () {*/
-Route::get('', [ClientController::class, 'edit'])->name('profile.edit');
     Route::resource('clients', ClientController::class);
     Route::resource('numbers', NumberClientController::class);
     Route::resource('jobs', JobController::class);

@@ -30,6 +30,11 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        if ($request->expectsJson()) {
+            // If request is expecting JSON response (e.g., from Postman), return JSON data
+            return response()->json(['message' => 'Authenticated successfully']);
+        }
+
         return redirect()->intended(route('dashboard', absolute: false));
     }
 

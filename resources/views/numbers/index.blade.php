@@ -20,8 +20,8 @@
                     <thead style="background: #f2f2f2">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">icon</th>
-                        <th scope="col">Company name</th>
+                        <th scope="col" style="width: 100px">icon</th>
+                        <th scope="col" style="width: 150px">Company name</th>
                         <th scope="col">Number</th>
                         <th scope="col">Text</th>
                         <th scope="col">Action</th>
@@ -32,7 +32,7 @@
                     @foreach($numbers as $number)
                         <tr>
                             <th scope="row">{{$number->id}}</th>
-                            <th>
+                            <th style="background: gray;">
                                 <img src="{{asset($number->icon)}}" alt="" width="80" height="80">
                             </th>
                             <td>{{$number->client->name}}</td>

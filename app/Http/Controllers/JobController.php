@@ -16,8 +16,6 @@ class JobController extends Controller
     {
         $searchName = $request->input('searchName');
         $searchCompanyName = $request->input('searchCompanyName');
-        $expectsJson = $request->expectsJson();
-
 
         $jobs = Job::query()
             ->leftJoin('clients', 'position_of_employment.client_id', '=', 'clients.id')
@@ -31,9 +29,8 @@ class JobController extends Controller
             ->paginate(5);
 
 
-        if($expectsJson){
+        if($request->expectsJson()){
             return response()->json($jobs);
-
         }else {
             return view('jobs.index', compact('jobs'));
         }
