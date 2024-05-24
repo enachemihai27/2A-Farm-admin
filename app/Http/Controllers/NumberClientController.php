@@ -6,6 +6,7 @@ use App\Helpers\ImageUploadHelper;
 use App\Models\Client;
 use App\Models\NumberClient;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class NumberClientController extends Controller
 {
@@ -111,6 +112,8 @@ class NumberClientController extends Controller
         $number = NumberClient::findOrFail($id);
 
         $number->delete();
+
+        File::delete(public_path($number->icon));
 
         return redirect()->back();
     }

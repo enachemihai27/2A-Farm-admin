@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\ImageUploadHelper;
-use App\Models\Client;
 use App\Models\Event;
-use App\Models\Job;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -117,6 +116,8 @@ class EventController extends Controller
         $event = Event::findOrFail($id);
 
         $event->delete();
+
+        File::delete(public_path($event->picture));
 
         return redirect()->back();
     }
