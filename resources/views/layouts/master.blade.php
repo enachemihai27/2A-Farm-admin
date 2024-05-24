@@ -28,7 +28,7 @@
                             Dashboard
                         </a>
 
-                            <a class="text-decoration-none btn-sm btn-info mx-1" href="{{route('clients.index')}}">Client</a>
+                            <a class="text-decoration-none btn-sm btn-info mx-1" href="{{route('client.index')}}">Client</a>
                             <a class="text-decoration-none btn-sm btn-info mx-1" href="{{route('numbers.index')}}">Client numbers</a>
                             <a class="text-decoration-none btn-sm btn-info mx-1" href="{{route('jobs.index')}}">Jobs</a>
                             <a class=" text-decoration-none btn-sm btn-info mx-1" href="{{route('events.index')}}">Events</a>

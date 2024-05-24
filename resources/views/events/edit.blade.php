@@ -14,7 +14,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>Add event</h4>
+                        <h4>Edit event</h4>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
                         <a class="btn-sm btn-success mx-1" href="{{route('events.index')}}">Back</a>
@@ -23,20 +23,25 @@
             </div>
 
             <div class="card-body">
-                <form action="{{route('events.store')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{route('events.update', $event->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
+
                     <div class="form-group">
                         <label for="title" class="form-label">Title</label>
-                        <input id="title" type="text" class="form-control" name="title" value="{{old('title')}}">
+                        <input id="title" type="text" class="form-control" name="title" value="{{$event->title}}">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group mt-4">
                         <label for="description" class="form-label">Description</label>
-                        <textarea id="description" rows="10" type="text" class="form-control" name="description">{{old('description')}}</textarea>
+                        <textarea id="description" type="text" rows="10" class="form-control" name="description">{{$event->description}}</textarea>
                     </div>
 
 
-                    <div class="form-group">
+                    <div class="form-group mt-4">
+                        <div>
+                            <img src="{{asset($event->picture)}}" alt="" width="80" height="80">
+                        </div>
                         <label for="picture" class="form-label">Picture</label>
                         <input id="picture" type="file" class="form-control" name="picture">
                     </div>

@@ -14,16 +14,16 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>Add client</h4>
+                        <h4>Edit client</h4>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
-                        <a class="btn-sm btn-success mx-1" href="{{route('clients.index')}}">Back</a>
+                        <a class="btn-sm btn-success mx-1" href="{{route('client.index')}}">Back</a>
                     </div>
                 </div>
             </div>
 
             <div class="card-body">
-                <form action="{{route('clients.update', $client->id)}}" method="POST">
+                <form action="{{route('client.update', $client->id)}}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
@@ -60,12 +60,6 @@
                         <label for="cui" class="form-label">CUI</label>
                         <input id="cui" type="text" class="form-control" name="cui" value="{{$client->CUI}}">
                     </div>
-
-                    <div class="form-group">
-                        <label for="departments_emails" class="form-label">Departments Emails</label>
-                        <textarea name="departments_emails" cols="30" rows="10" id="departments_emails" class="form-control">{{$client->departments_emails}}</textarea>
-                    </div>
-
 
                     <div class="form-group">
                         <label for="video_url" class="form-label">Video url</label>

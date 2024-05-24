@@ -31,15 +31,6 @@
                         <input id="icon" type="file" class="form-control" name="icon">
                     </div>
 
-                    <div class="form-group">
-                        <label for="company" class="form-label">Company</label>
-                        <select id="company" type="text" class="form-control" name="company_id">
-                            <option value=" ">Select</option>
-                            @foreach($companies as $company)
-                                <option value="{{$company->id}}">{{$company->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
 
                     <div class="form-group">
                         <label for="number" class="form-label">Number</label>

@@ -29,15 +29,13 @@ class NumberClientController extends Controller
      */
     public function create()
     {
-        $companies = Client::all();
-        return view('numbers.create', compact('companies'));
+        return view('numbers.create');
     }
 
 
     public function validateUploadAndSave(Request $request, $number){
 
         $request->validate([
-            'company_id' => ['required', 'integer'],
             'number' => ['required', 'integer'],
             'text' => ['required']
         ]);
@@ -53,7 +51,7 @@ class NumberClientController extends Controller
         }
 
 
-        $number->client_id = $request->company_id;
+        $number->client_id = 1;
         $number->number = $request->number;
         $number->text = $request->text;
 
@@ -88,8 +86,8 @@ class NumberClientController extends Controller
     public function edit(string $id)
     {
         $number = NumberClient::findOrFail($id);
-        $companies = Client::all();
-        return view('numbers.edit', compact('number', 'companies'));
+
+        return view('numbers.edit', compact('number'));
     }
 
     /**

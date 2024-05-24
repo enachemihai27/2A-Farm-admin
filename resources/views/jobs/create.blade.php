@@ -33,17 +33,6 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="company" class="form-label">Company</label>
-                        <select id="company" type="text" class="form-control" name="company_id">
-                            <option value=" ">Select</option>
-                            @foreach($companies as $company)
-                                <option value="{{$company->id}}">{{$company->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-
-
-                    <div class="form-group">
                         <label for="description" class="form-label">Description</label>
                         <textarea id="description" rows="10" type="text" class="form-control" name="description">{{old('description')}}</textarea>
                     </div>

@@ -11,20 +11,28 @@ class ClientController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $clients = Client::all();
+        $client = Client::first();
 
-        return view('clients.index', ['clients' => $clients]);
+        if($request->expectsJson()){
+            return response()->json($client);
+        }else {
+            return view('client.index', compact('client'));
+        }
+
+
+
+
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+/*    public function create()
     {
-        return view('clients.create');
-    }
+        return view('client.create');
+    }*/
 
     public function validateAndSave(Request $request, $client): void{
         $request->validate([
@@ -59,11 +67,13 @@ class ClientController extends Controller
     public function store(Request $request): RedirectResponse
     {
 
+        if(Client::all() < 1) {
+
         $client = new Client();
 
         $this->validateAndSave($request, $client);
-
-        return redirect()->route('clients.index');
+    }
+        return redirect()->route('client.index');
     }
 
     /**
@@ -81,7 +91,7 @@ class ClientController extends Controller
     {
         $client = Client::findOrFail($id);
 
-        return view ('clients.edit', compact('client'));
+        return view ('client.edit', compact('client'));
     }
 
     /**
@@ -93,20 +103,17 @@ class ClientController extends Controller
 
         $this->validateAndSave($request, $client);
 
-        return redirect()->route('clients.index');
+        return redirect()->route('client.index');
+
+
 
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id): RedirectResponse
+    public function destroy(string $id)
     {
-        $client = Client::findOrFail($id);
-
-        $client->delete();
-
-        return redirect()->route('clients.index');
 
     }
 }

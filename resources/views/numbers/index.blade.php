@@ -11,7 +11,10 @@
                         <h4>Company numbers</h4>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
+
+                        @if($numbers->count() < 4)
                             <a class="btn-sm btn-success mx-1" href="{{route('numbers.create')}}">Create</a>
+                        @endif
                     </div>
                 </div>
             </div>

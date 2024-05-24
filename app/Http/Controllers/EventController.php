@@ -35,26 +35,16 @@ class EventController extends Controller
      */
     public function create()
     {
-
-        $companies = Client::all();
-
-        return view('events.create', compact('companies'));
+         return view('events.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
+
+
+    private function validateAndSave(Request $request, $event){
         $request->validate([
             'title' => ['required', 'max:256'],
-            'company_id' => ['required', 'integer'],
             'description' => 'required'
         ]);
-
-        $event = new Event();
-
-
 
         if($request->hasFile('picture')) {
             $request->validate([
@@ -65,12 +55,24 @@ class EventController extends Controller
         }
 
         $event->title = $request->title;
-        $event->client_id = $request->company_id;
+        $event->client_id = 1;
         $event->description = $request->description;
 
 
         $event->save();
 
+    }
+
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+
+        $event = new Event();
+
+        $this->validateAndSave($request, $event);
 
         return redirect()->route('events.index');
     }
@@ -80,7 +82,9 @@ class EventController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $event = Event::findOrFail($id);
+
+        return response()->json($event);
     }
 
     /**
@@ -88,7 +92,8 @@ class EventController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $event = Event::findOrFail($id);
+        return view('events.edit', compact('event'));
     }
 
     /**
@@ -96,7 +101,12 @@ class EventController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $event = Event::findOrFail($id);
+
+        $this->validateAndSave($request, $event);
+
+        return redirect()->route('events.index');
+
     }
 
     /**

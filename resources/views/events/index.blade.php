@@ -52,7 +52,7 @@
                             <td>
                                 <div class="d-flex">
 
-                                        {{--<a class="btn-sm btn-primary btn mx-2" href="{{route('events.edit', $job->id)}}">Edit</a>--}}
+                                        <a class="btn-sm btn-primary btn mx-2" href="{{route('events.edit', $event->id)}}">Edit</a>
 
                                         <form method="POST" action="{{route('events.destroy', $event->id)}}">
                                             @csrf
