@@ -22,32 +22,42 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+function registerResourceRoutes($prefix, $controller, $name): void
+{
+    Route::middleware('auth')->prefix($prefix)->as("$name.")->group(function () use ($controller) {
+        Route::get('/create', [$controller, 'create'])->name('create');
+        Route::post('/', [$controller, 'store'])->name('store');
+        Route::get('/{id}/edit', [$controller, 'edit'])->name('edit');
+        Route::put('/{id}', [$controller, 'update'])->name('update');
+        Route::delete('/{id}', [$controller, 'destroy'])->name('destroy');
+    });
+}
 
+/*Client Routes*/
 Route::get('client', [ClientController::class, 'index'])->name('client.index');
-
 Route::middleware('auth')->prefix('client')->as('client.')->group(function () {
     Route::post('/', [ClientController::class, 'store'])->name('store');
     Route::get('/{client}/edit', [ClientController::class, 'edit'])->name('edit');
     Route::put('/{client}', [ClientController::class, 'update'])->name('update');
 });
 
-
-
+// Events Routes
+registerResourceRoutes('events', EventController::class, 'events');
 Route::get('events', [EventController::class, 'index'])->name('events.index');
 Route::get('events/{event}/show', [EventController::class, 'show'])->name('events.show');
 
+// Numbers Routes
+registerResourceRoutes('numbers', NumberClientController::class, 'numbers');
+Route::get('numbers', [NumberClientController::class, 'index'])->name('numbers.index');
 
-Route::middleware('auth')->prefix('events')->as('events.')->group(function () {
-    Route::get('/create', [EventController::class, 'create'])->name('create');
-    Route::post('/', [EventController::class, 'store'])->name('store');
-    Route::get('/{events}/edit', [EventController::class, 'edit'])->name('edit');
-    Route::put('/{event}', [EventController::class, 'update'])->name('update');
-    Route::delete('/{event}', [EventController::class, 'destroy'])->name('destroy');
-});
+// Jobs Routes
+registerResourceRoutes('jobs', JobController::class, 'jobs');
+Route::get('jobs', [JobController::class, 'index'])->name('jobs.index');
 
 
-  //  Route::resource('client', ClientController::class);
-    Route::resource('numbers', NumberClientController::class);
-    Route::resource('jobs', JobController::class);
-   // Route::resource('events', EventController::class);
+
+
+
+
+
 

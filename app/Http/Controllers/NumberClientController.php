@@ -109,12 +109,17 @@ class NumberClientController extends Controller
      */
     public function destroy(string $id)
     {
-        $number = NumberClient::findOrFail($id);
+        try {
+            $number = NumberClient::findOrFail($id);
 
-        $number->delete();
 
-        File::delete(public_path($number->icon));
+            File::delete(public_path($number->icon));
+            $number->delete();
 
-        return redirect()->back();
+        } catch (Exception $e) {
+            return redirect()->back()->withErrors(['msg' => 'Record not found or could not be deleted.' . $e]);
+        }
+
+        return redirect()->back()->with('success', 'Record deleted successfully.');
     }
 }

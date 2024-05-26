@@ -36,7 +36,7 @@
 
                     <div class="form-group">
                         <label for="description" class="form-label mt-2">Description</label>
-                        <textarea rows="10" id="description" type="text" class="form-control" name="description">{{$job->description}}"></textarea>
+                        <textarea rows="10" id="description" type="text" class="form-control" name="description">{{$job->description}}</textarea>
                     </div>
 
 
