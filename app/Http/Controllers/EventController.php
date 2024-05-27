@@ -79,7 +79,7 @@ class EventController extends Controller
             $event = new Event();
             $this->validateAndSave($request, $event);
 
-            session()->flash('success', 'Record created successfully.');
+            session()->flash('success', 'Event created successfully.');
         } catch (Exception $e) {
             session()->flash('error', 'Unable to created record.' . $e);
         }
@@ -122,7 +122,7 @@ class EventController extends Controller
             $event = Event::findOrFail($id);
             $this->validateAndSave($request, $event);
 
-            session()->flash('success', 'Record updated successfully.');
+            session()->flash('success', 'Event updated successfully.');
 
         } catch (Exception $e) {
             session()->flash('error', 'Record not found or could not be updated.' . $e);
@@ -142,7 +142,7 @@ class EventController extends Controller
             $event->delete();
             File::delete(public_path($event->picture));
 
-            session()->flash('success', 'Record deleted successfully.');
+            session()->flash('success', 'Event deleted successfully.');
 
         } catch (Exception $e) {
             session()->flash('error', 'Record not found or could not be deleted.' . $e);

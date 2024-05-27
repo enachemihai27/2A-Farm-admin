@@ -4,34 +4,48 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use App\Models\Job;
+use App\Services\JobService;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Mockery\Exception;
 
 class JobController extends Controller
 {
+
+    protected JobService $jobService;
+
+    public function __construct(JobService $jobService)
+    {
+        $this->jobService = $jobService;
+    }
+
+
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
+        $jobs = null;
         $searchName = $request->input('searchName');
         $searchCompanyName = $request->input('searchCompanyName');
 
-        $jobs = Job::query()
-            ->leftJoin('clients', 'position_of_employment.client_id', '=', 'clients.id')
-            ->select('position_of_employment.*', 'clients.name as client_name')
-            ->when($searchName, function ($query, $searchName) {
-                return $query->where('position_of_employment.name', 'like', '%' . $searchName . '%');
-            })
-            ->when($searchCompanyName, function ($query, $searchCompanyName) {
-                return $query->where('clients.name', 'like', '%' . $searchCompanyName . '%');
-            })
-            ->paginate(5);
+        try {
+            $jobs = Job::query()
+                ->leftJoin('clients', 'position_of_employment.client_id', '=', 'clients.id')
+                ->select('position_of_employment.*', 'clients.name as client_name')
+                ->when($searchName, function ($query, $searchName) {
+                    return $query->where('position_of_employment.name', 'like', '%' . $searchName . '%');
+                })
+                ->when($searchCompanyName, function ($query, $searchCompanyName) {
+                    return $query->where('clients.name', 'like', '%' . $searchCompanyName . '%');
+                })
+                ->paginate(5);
+        }catch (Exception $e){
+            session()->flash('error', 'Unable to load records.' . $e);
+        }
 
-
-        if($request->expectsJson()){
+        if ($request->expectsJson()) {
             return response()->json($jobs);
-        }else {
+        } else {
             return view('jobs.index', compact('jobs'));
         }
     }
@@ -45,19 +59,6 @@ class JobController extends Controller
         return view('jobs.create', compact('companies'));
     }
 
-    public function validateAndSave(Request $request, $job){
-        $request->validate([
-            'name' => ['required', 'max:256'],
-            'description' => 'required'
-        ]);
-
-        $job->name = $request->name;
-        $job->client_id = 1;
-        $job->description = $request->description;
-
-        $job->save();
-
-    }
 
 
 
@@ -66,9 +67,13 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        $job = new Job();
-        $this->validateAndSave($request, $job);
-
+        try {
+            $job = new Job();
+            $this->jobService->validateAndSave($request, $job);
+            session()->flash('success', 'Jobs created successfully.');
+        } catch (Exception $e) {
+            session()->flash('error', 'Unable to created record.' . $e);
+        }
         return redirect()->route('jobs.index');
 
     }
@@ -86,8 +91,12 @@ class JobController extends Controller
      */
     public function edit(string $id)
     {
-        $job = Job::findOrFail($id);
-
+        $job = null;
+        try {
+            $job = Job::findOrFail($id);
+        } catch (Exception $e) {
+            session()->flash('error', 'Record not found.' . $e);
+        }
         return view('jobs.edit', compact('job'));
     }
 
@@ -96,10 +105,13 @@ class JobController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $job = Job::findOrFail($id);
-
-        $this->validateAndSave($request, $job);
-
+        try {
+            $job = Job::findOrFail($id);
+            $this->jobService->validateAndSave($request, $job);
+            session()->flash('success', 'Job updated successfully.');
+        } catch (Exception $e) {
+            session()->flash('error', 'Record not found or could not be updated.' . $e);
+        }
         return redirect()->route('jobs.index');
 
     }
@@ -109,9 +121,13 @@ class JobController extends Controller
      */
     public function destroy(string $id)
     {
-        $job = Job::findOrFail($id);
-
-        $job->delete();
+        try {
+            $job = Job::findOrFail($id);
+            $job->delete();
+            session()->flash('success', 'Job deleted successfully.');
+        } catch (Exception $e) {
+            session()->flash('error', 'Record not found or could not be deleted.' . $e);
+        }
 
         return redirect()->route('jobs.index');
     }
