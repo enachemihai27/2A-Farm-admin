@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Client;
 use App\Models\Job;
 use App\Services\JobService;
 use Illuminate\Http\Request;
@@ -25,20 +24,8 @@ class JobController extends Controller
     public function index(Request $request)
     {
         $jobs = null;
-        $searchName = $request->input('searchName');
-        $searchCompanyName = $request->input('searchCompanyName');
-
         try {
-            $jobs = Job::query()
-                ->leftJoin('clients', 'position_of_employment.client_id', '=', 'clients.id')
-                ->select('position_of_employment.*', 'clients.name as client_name')
-                ->when($searchName, function ($query, $searchName) {
-                    return $query->where('position_of_employment.name', 'like', '%' . $searchName . '%');
-                })
-                ->when($searchCompanyName, function ($query, $searchCompanyName) {
-                    return $query->where('clients.name', 'like', '%' . $searchCompanyName . '%');
-                })
-                ->paginate(5);
+            $jobs = $this->jobService->getAll($request);
         }catch (Exception $e){
             session()->flash('error', 'Unable to load records.' . $e);
         }
@@ -55,8 +42,7 @@ class JobController extends Controller
      */
     public function create()
     {
-        $companies = Client::all();
-        return view('jobs.create', compact('companies'));
+        return view('jobs.create');
     }
 
 
@@ -75,16 +61,8 @@ class JobController extends Controller
             session()->flash('error', 'Unable to created record.' . $e);
         }
         return redirect()->route('jobs.index');
-
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
