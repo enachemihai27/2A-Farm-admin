@@ -4,29 +4,33 @@ namespace App\Http\Controllers;
 
 use App\Helpers\ImageUploadHelper;
 use App\Models\Event;
+use App\Services\EventService;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Mockery\Exception;
 
 class EventController extends Controller
 {
-    use ImageUploadHelper;
 
+
+    protected EventService $eventService;
+
+    public function __construct(EventService $eventService)
+    {
+        $this->eventService = $eventService;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
         $events = null;
-        $perPage = $request->input('per_page', 5);
-        $search = $request->input('search');
         try {
-            $events = Event::when($search, function ($query, $search) {
-                return $query->where('title', 'like', "%{$search}%");
-            })->paginate($perPage);
-        } catch (Exception $e) {
-            session()->flash('error', 'Unable to load events.' . $e);
+            $events = $this->eventService->getAll($request);
+        }catch (QueryException $e){
+            session()->flash('error', 'Unable to load records.' . $e);
         }
 
         if ($request->expectsJson()) {
@@ -45,31 +49,6 @@ class EventController extends Controller
     }
 
 
-    private function validateAndSave(Request $request, $event)
-    {
-        $request->validate([
-            'title' => ['required', 'max:256'],
-            'description' => 'required'
-        ]);
-
-        if ($request->hasFile('picture')) {
-            $request->validate([
-                'picture' => ['required', 'max:2028', 'image']
-            ]);
-            $path = $this->uploadImage($request, 'picture', 'uploads');
-            $event->picture = $path;
-        }
-
-        $event->title = $request->title;
-        $event->client_id = 1;
-        $event->description = $request->description;
-
-
-        $event->save();
-
-    }
-
-
     /**
      * Store a newly created resource in storage.
      */
@@ -77,10 +56,10 @@ class EventController extends Controller
     {
         try {
             $event = new Event();
-            $this->validateAndSave($request, $event);
-
+            $this->eventService->validate($request, $event);
+            $event->save();
             session()->flash('success', 'Event created successfully.');
-        } catch (Exception $e) {
+        } catch (QueryException  $e) {
             session()->flash('error', 'Unable to created record.' . $e);
         }
         return redirect()->route('events.index');
@@ -107,7 +86,7 @@ class EventController extends Controller
         $event = null;
         try {
             $event = Event::findOrFail($id);
-        } catch (Exception $e) {
+        } catch (ModelNotFoundException $e) {
             session()->flash('error', 'Record not found.' . $e);
         }
         return view('events.edit', compact('event'));
@@ -120,16 +99,13 @@ class EventController extends Controller
     {
         try {
             $event = Event::findOrFail($id);
-            $this->validateAndSave($request, $event);
-
+            $this->eventService->validate($request, $event);
+            $event->save();
             session()->flash('success', 'Event updated successfully.');
-
-        } catch (Exception $e) {
+        } catch (ModelNotFoundException|QueryException $e) {
             session()->flash('error', 'Record not found or could not be updated.' . $e);
         }
         return redirect()->route('events.index');
-
-
     }
 
     /**
@@ -144,7 +120,7 @@ class EventController extends Controller
 
             session()->flash('success', 'Event deleted successfully.');
 
-        } catch (Exception $e) {
+        } catch (QueryException|ModelNotFoundException $e) {
             session()->flash('error', 'Record not found or could not be deleted.' . $e);
         }
 

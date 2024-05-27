@@ -4,12 +4,7 @@
 @section('content')
 
     <div class="main-container mt-5">
-        @if($errors->any() )
-            @foreach($errors->all() as $error )
-                <div class="alert alert-danger">{{$error}}</div>
-            @endforeach
-        @endif
-
+        @include('layouts.messages')
         <div class="card mb-4">
             <div class="card-header">
                 <div class="row">

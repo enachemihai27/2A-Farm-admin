@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Job;
 use App\Services\JobService;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Mockery\Exception;
 
@@ -26,7 +28,7 @@ class JobController extends Controller
         $jobs = null;
         try {
             $jobs = $this->jobService->getAll($request);
-        }catch (Exception $e){
+        }catch (QueryException $e){
             session()->flash('error', 'Unable to load records.' . $e);
         }
 
@@ -55,10 +57,11 @@ class JobController extends Controller
     {
         try {
             $job = new Job();
-            $this->jobService->validateAndSave($request, $job);
+            $this->jobService->validate($request, $job);
+            $job->save();
             session()->flash('success', 'Jobs created successfully.');
-        } catch (Exception $e) {
-            session()->flash('error', 'Unable to created record.' . $e);
+        } catch (QueryException $e) {
+            return redirect()->back()->withErrors(['error' => 'Unable to create record. ' . $e->getMessage()]);
         }
         return redirect()->route('jobs.index');
     }
@@ -72,7 +75,7 @@ class JobController extends Controller
         $job = null;
         try {
             $job = Job::findOrFail($id);
-        } catch (Exception $e) {
+        } catch (ModelNotFoundException $e) {
             session()->flash('error', 'Record not found.' . $e);
         }
         return view('jobs.edit', compact('job'));
@@ -85,10 +88,11 @@ class JobController extends Controller
     {
         try {
             $job = Job::findOrFail($id);
-            $this->jobService->validateAndSave($request, $job);
+            $this->jobService->validate($request, $job);
+            $job->save();
             session()->flash('success', 'Job updated successfully.');
-        } catch (Exception $e) {
-            session()->flash('error', 'Record not found or could not be updated.' . $e);
+        } catch (ModelNotFoundException|QueryException $e) {
+            return redirect()->back()->withErrors(['error' => 'Unable to update record. ' . $e->getMessage()]);
         }
         return redirect()->route('jobs.index');
 
@@ -103,8 +107,8 @@ class JobController extends Controller
             $job = Job::findOrFail($id);
             $job->delete();
             session()->flash('success', 'Job deleted successfully.');
-        } catch (Exception $e) {
-            session()->flash('error', 'Record not found or could not be deleted.' . $e);
+        } catch (ModelNotFoundException|QueryException $e) {
+            return redirect()->back()->withErrors(['error' => 'Unable to delete record. ' . $e->getMessage()]);
         }
 
         return redirect()->route('jobs.index');

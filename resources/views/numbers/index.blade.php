@@ -4,6 +4,7 @@
 @section('content')
 
     <div class="main-container mt-5">
+        @include('layouts.messages')
         <div class="card">
             <div class="card-header">
                 <div class="row">
@@ -47,13 +48,11 @@
                                 <div class="d-flex">
 
                                         <a class="btn-sm btn-primary btn mx-2" href="{{route('numbers.edit', $number->id)}}">Edit</a>
-
-                                        <form method="POST" action="{{route('numbers.destroy', $number->id)}}">
+                            {{--            <form method="POST" action="{{route('numbers.destroy', $number->id)}}">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn-sm btn-danger btn">Delete</button>
-                                        </form>
-
+                                        </form>--}}
                                 </div>
                             </td>
                         </tr>

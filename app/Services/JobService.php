@@ -4,8 +4,9 @@
 namespace App\Services;
 
 use App\Models\Job;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
-use Mockery\Exception;
+
 
 class JobService
 {
@@ -29,7 +30,7 @@ class JobService
                     return $query->where('clients.name', 'like', '%' . $searchCompanyName . '%');
                 })
                 ->paginate($perPage);
-        }catch (Exception $e){
+        }catch (QueryException $e){
             session()->flash('error', 'Unable to load records.' . $e);
         }
         return $jobs;
@@ -38,7 +39,7 @@ class JobService
 
 
 
-    public function validateAndSave(Request $request, $job)
+    public function validate(Request $request, $job)
     {
         $request->validate([
             'name' => ['required', 'max:256', 'unique:position_of_employment,name'],
@@ -49,7 +50,6 @@ class JobService
         $job->client_id = 1;
         $job->description = $request->description;
 
-        $job->save();
     }
 
 }
