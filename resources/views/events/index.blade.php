@@ -12,7 +12,9 @@
                         <h4>Events</h4>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
+                        @auth
                             <a class="btn-sm btn-success mx-1" href="{{route('events.create')}}">Create</a>
+                        @endauth
                     </div>
                     <div class="col-md-6">
                         <form action="{{ route('events.index') }}" method="GET" class="mb-3">
@@ -52,7 +54,7 @@
                             </td>
                             <td>
                                 <div class="d-flex">
-
+                                    @auth
                                         <a class="btn-sm btn-primary btn mx-2" href="{{route('events.edit', $event->id)}}">Edit</a>
 
                                         <form method="POST" action="{{route('events.destroy', $event->id)}}">
@@ -60,7 +62,7 @@
                                             @method('DELETE')
                                             <button class="btn-sm btn-danger btn">Delete</button>
                                         </form>
-
+                                    @endauth
                                 </div>
                             </td>
                         </tr>

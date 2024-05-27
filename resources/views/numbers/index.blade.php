@@ -46,13 +46,14 @@
 
                             <td>
                                 <div class="d-flex">
-
+                                    @auth
                                         <a class="btn-sm btn-primary btn mx-2" href="{{route('numbers.edit', $number->id)}}">Edit</a>
                             {{--            <form method="POST" action="{{route('numbers.destroy', $number->id)}}">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn-sm btn-danger btn">Delete</button>
                                         </form>--}}
+                                    @endauth
                                 </div>
                             </td>
                         </tr>

@@ -65,11 +65,11 @@
                         <label for="video_url" class="form-label">Video url</label>
                         <input id="video_url" type="text" class="form-control" name="video_url" value="{{$client->video_url}}">
                     </div>
-
-                    <div class="form-group mt-3">
-                       <button class="btn btn-primary">Submit</button>
-                    </div>
-
+                    @auth
+                        <div class="form-group mt-3">
+                           <button class="btn btn-primary">Submit</button>
+                        </div>
+                    @endauth
                 </form>
             </div>
         </div>

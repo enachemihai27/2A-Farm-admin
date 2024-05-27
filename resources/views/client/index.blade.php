@@ -63,11 +63,11 @@
                            value="{{$client->video_url}}" readonly>
                 </div>
 
-                <div class="d-flex justify-content-end mt-4">
-                    <a class="btn-sm btn-success" href="{{route('client.edit', $client->id)}}">Edit</a>
-                </div>
-
-
+                @auth
+                    <div class="d-flex justify-content-end mt-4">
+                        <a class="btn-sm btn-success" href="{{route('client.edit', $client->id)}}">Edit</a>
+                    </div>
+                @endauth
             </div>
         </div>
     </div>
