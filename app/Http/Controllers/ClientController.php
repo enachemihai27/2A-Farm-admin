@@ -36,7 +36,7 @@ class ClientController extends Controller
 
     public function validateAndSave(Request $request, $client): void{
         $request->validate([
-            'name' => 'required',
+            'name' => ['required'],
             'email' => ['required', 'max:200', 'email'],
             'primary_phone_number' => ['required'],
             'order_number' => ['required', 'max:200'],
@@ -53,7 +53,6 @@ class ClientController extends Controller
         $client->address = $request->address;
         $client->order_number = $request->order_number;
         $client->CUI = $request->cui;
-        $client->departments_emails = $request->departments_emails;
 
         $client->video_url = $request->video_url;
 

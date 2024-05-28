@@ -9,9 +9,6 @@ class Job extends Model
 {
     use HasFactory;
 
-    protected $table = 'position_of_employment';
+    protected $table = 'positions_of_employment';
 
-    public function client(){
-        return $this->belongsTo(Client::class);
-    }
 }

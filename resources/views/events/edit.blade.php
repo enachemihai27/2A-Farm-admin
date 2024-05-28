@@ -34,11 +34,10 @@
 
 
                     <div class="form-group mt-4">
-                        <div>
-                            <img src="{{asset($event->picture)}}" alt="" width="80" height="80">
-                        </div>
                         <label for="picture" class="form-label">Picture</label>
-                        <input id="picture" type="file" class="form-control" name="picture">
+                        <br>
+                        <img src="{{asset($event->picture)}}" alt="" width="180">
+                        <input id="picture" type="file" class="form-control mt-3" name="picture">
                     </div>
 
                     <div class="form-group mt-3">

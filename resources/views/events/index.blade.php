@@ -2,7 +2,6 @@
 
 
 @section('content')
-
     <div class="main-container mt-5">
         @include('layouts.messages')
         <div class="card">
@@ -32,12 +31,11 @@
                 <table class="table table-striped table-bordered bordered-drk">
                     <thead style="background: #f2f2f2">
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col" style="width: 50px">Id</th>
                         <th scope="col">Title</th>
-                        <th scope="col">Company name</th>
                         <th scope="col">Description</th>
-                        <th scope="col">Picture</th>
-                        <th scope="col">Action</th>
+                        <th scope="col" style="width: 200px">Picture</th>
+                        <th scope="col" style="width: 100px">Action</th>
 
 
                     </tr>
@@ -47,10 +45,9 @@
                         <tr>
                             <th scope="row">{{$event->id}}</th>
                             <td>{{$event->title}}</td>
-                            <td>{{$event->client->name}}</td>
                             <td>{{$event->description}}</td>
                             <td>
-                                <img src="{{asset($event->picture)}}" alt="" width="80" height="80">
+                                <img src="{{asset($event->picture)}}" alt="" width="180px">
                             </td>
                             <td>
                                 <div class="d-flex">

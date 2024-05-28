@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('clients', function (Blueprint $table) {
+        Schema::create('client', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('primary_phone_number');
@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('address');
             $table->string('order_number');
             $table->string('CUI');
-            $table->text('departments_emails')->nullable();
             $table->text('video_url')->nullable();
             $table->timestamps();
         });

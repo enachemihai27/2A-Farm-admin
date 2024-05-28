@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('position_of_employment', function (Blueprint $table) {
+        Schema::create('positions_of_employment', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('company_id');
+            $table->string('name')->unique();
             $table->text('description');
             $table->timestamps();
         });

@@ -22,22 +22,9 @@
                     @csrf
 
                     <div class="form-group">
-                        <label for="icon" class="form-label">Icon</label>
-                        <input id="icon" type="file" class="form-control" name="icon">
-                    </div>
-
-
-                    <div class="form-group">
                         <label for="number" class="form-label">Number</label>
                         <input id="number" type="text" class="form-control" name="number" value="{{old('number')}}">
                     </div>
-
-                    <div class="form-group">
-                        <label for="text" class="form-label">Text</label>
-                        <input id="text" type="text" class="form-control" name="text" value="{{old('text')}}">
-                    </div>
-
-
 
                     <div class="form-group mt-3">
                        <button class="btn btn-primary">Submit</button>

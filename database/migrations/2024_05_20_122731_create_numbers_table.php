@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('position_of_employment', function (Blueprint $table) {
-            $table->renameColumn('company_id', 'client_id');
+        Schema::create('numbers', function (Blueprint $table) {
+            $table->id();
+            $table->integer('number');
+            $table->timestamps();
         });
     }
 
@@ -21,8 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('position_of_employment', function (Blueprint $table) {
-            $table->renameColumn('company_id', 'client_id');
-        });
+        Schema::dropIfExists('number_clients');
     }
 };

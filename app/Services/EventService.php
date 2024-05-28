@@ -45,7 +45,6 @@ class EventService
         }
 
         $event->title = $request->title;
-        $event->client_id = 1;
         $event->description = $request->description;
 
     }

@@ -4,7 +4,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\JobController;
-use App\Http\Controllers\NumberClientController;
+use App\Http\Controllers\NumberController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,8 +47,8 @@ Route::get('events', [EventController::class, 'index'])->name('events.index');
 Route::get('events/{event}/show', [EventController::class, 'show'])->name('events.show');
 
 // Numbers Routes
-registerResourceRoutes('numbers', NumberClientController::class, 'numbers');
-Route::get('numbers', [NumberClientController::class, 'index'])->name('numbers.index');
+registerResourceRoutes('numbers', NumberController::class, 'numbers');
+Route::get('numbers', [NumberController::class, 'index'])->name('numbers.index');
 
 // Jobs Routes
 registerResourceRoutes('jobs', JobController::class, 'jobs');
