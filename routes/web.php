@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\NumberController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -53,6 +54,9 @@ Route::get('numbers', [NumberController::class, 'index'])->name('numbers.index')
 // Jobs Routes
 registerResourceRoutes('jobs', JobController::class, 'jobs');
 Route::get('jobs', [JobController::class, 'index'])->name('jobs.index');
+
+// Email
+Route::post('email/send', [MailController::class, 'sendEmail'])->name('email.send');
 
 
 
