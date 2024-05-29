@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light bg-light ">
     <div class="container-fluid ">
-        <a href="{{route('dashboard')}}" class="navbar-brand">Navbar</a>
+        <a href="{{route('dashboard')}}" class="navbar-brand"><img src="{{asset('assets/logo2A.svg')}}" /></a>
 
 
         @if (Route::has('login'))
