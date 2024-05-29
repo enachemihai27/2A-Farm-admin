@@ -23,6 +23,11 @@ trait EmailSender
         // Check if the request has a file attachment
         if ($request->hasFile('attachment')) {
 
+            //check if file is a pdf and have max 25MB
+            $request->validate([
+                'attachment' => 'file|mimes:pdf|max:25600', // max:25600 for 25 MB (25600 KB)
+            ]);
+
             //upload temporally file
             $path = $this->upload($request, 'attachment', 'uploads');
 
@@ -33,6 +38,6 @@ trait EmailSender
             File::delete(public_path($path));
         }
 
-        return '<h1>Successfully!</h1>';
+         return response()->json(['message' => 'Email send successfully!']);
     }
 }
