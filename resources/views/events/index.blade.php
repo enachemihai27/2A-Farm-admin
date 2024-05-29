@@ -16,7 +16,7 @@
                         @endauth
                     </div>
                     <div class="col-md-6">
-                        <form action="{{ route('events.index') }}" method="GET" class="mb-3">
+                        <form action="{{ route('events.privateIndex') }}" method="GET" class="mb-3">
                             <div class="input-group">
                                 <input type="text" name="search" class="form-control" placeholder="Search by event title" value="{{request('search')}}">
                                 <div class="input-group-append">

@@ -18,12 +18,24 @@ class NumberController extends Controller
      */
     public function index(Request $request)
     {
-        $numbers = Number::all();
+        try {
+            $numbers = Number::all();
+            if ($request->expectsJson()) {
+                return response()->json($numbers);
+            }
+        } catch (QueryException $e) {
+            return response()->json('error', 'Unable to load records.' . $e);
+        }
+    }
 
-        if ($request->expectsJson()) {
-            return response()->json($numbers);
-        } else {
+
+    public function privateIndex(Request $request)
+    {
+        try {
+            $numbers = Number::all();
             return view('numbers.index', compact('numbers'));
+        } catch (QueryException $e) {
+            session()->flash('error', 'Unable to load records.' . $e);
         }
     }
 
@@ -57,12 +69,12 @@ class NumberController extends Controller
             $this->validateAndUpload($request, $number);
             try {
                 $number->save();
-                return redirect()->route('numbers.index')->with('success', 'Record saved successfully.');
+                return redirect()->route('numbers.privateIndex')->with('success', 'Record saved successfully.');
             } catch (QueryException $e) {
                 return redirect()->route('numbers.create')->withErrors(['error' => 'Unable to save record. ' . $e->getMessage()]);
             }
         }
-        return redirect()->route('numbers.index');
+        return redirect()->route('numbers.privateIndex');
     }
 
 
@@ -89,7 +101,7 @@ class NumberController extends Controller
             $number = Number::findOrFail($id);
             $this->validateAndUpload($request, $number);
             $number->save();
-            return redirect()->route('numbers.index')->with('success', 'Record saved successfully.');
+            return redirect()->route('numbers.privateIndex')->with('success', 'Record saved successfully.');
         } catch (ModelNotFoundException|QueryException $e) {
             return redirect()->route('numbers.create')->withErrors(['error' => 'Unable to save record. ' . $e->getMessage()]);
         }
@@ -100,6 +112,6 @@ class NumberController extends Controller
      */
     public function destroy(string $id)
     {
-        return redirect()->route('numbers.index')->withErrors(['error' => 'Delete not allowed!']);
+        return redirect()->back()->withErrors(['error' => 'Delete not allowed!']);
     }
 }

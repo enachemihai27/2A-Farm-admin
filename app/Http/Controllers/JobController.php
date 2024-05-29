@@ -25,17 +25,24 @@ class JobController extends Controller
      */
     public function index(Request $request)
     {
-        $jobs = null;
         try {
             $jobs = $this->jobService->getAll($request);
-        }catch (QueryException $e){
-            session()->flash('error', 'Unable to load records.' . $e);
-        }
 
-        if ($request->expectsJson()) {
-            return response()->json($jobs);
-        } else {
+            if ($request->expectsJson()) {
+                return response()->json($jobs);
+            }
+
+        }catch (QueryException $e){
+            return response()->json('error', 'Unable to load record.' . $e);
+        }
+    }
+    public function privateIndex(Request $request)
+    {
+        try {
+            $jobs = $this->jobService->getAll($request);
             return view('jobs.index', compact('jobs'));
+        } catch (QueryException $e) {
+            session()->flash('error', 'Unable to load records.' . $e);
         }
     }
 
@@ -63,7 +70,7 @@ class JobController extends Controller
         } catch (QueryException $e) {
             return redirect()->back()->withErrors(['error' => 'Unable to create record. ' . $e->getMessage()]);
         }
-        return redirect()->route('jobs.index');
+        return redirect()->route('jobs.privateIndex');
     }
 
 
@@ -94,7 +101,7 @@ class JobController extends Controller
         } catch (ModelNotFoundException|QueryException $e) {
             return redirect()->back()->withErrors(['error' => 'Unable to update record. ' . $e->getMessage()]);
         }
-        return redirect()->route('jobs.index');
+        return redirect()->route('jobs.privateIndex');
 
     }
 
@@ -111,6 +118,6 @@ class JobController extends Controller
             return redirect()->back()->withErrors(['error' => 'Unable to delete record. ' . $e->getMessage()]);
         }
 
-        return redirect()->route('jobs.index');
+        return redirect()->back();
     }
 }

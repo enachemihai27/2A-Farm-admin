@@ -20,11 +20,10 @@
                             transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]
                             dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white" href="{{route('profile.edit')}}">Profile</a>
 
-                        <a class="text-decoration-none btn-sm btn-info mx-1" href="{{route('client.index')}}">Client</a>
-                        <a class="text-decoration-none btn-sm btn-info mx-1" href="{{route('numbers.index')}}">Numbers</a>
-                        <a class="text-decoration-none btn-sm btn-info mx-1" href="{{route('jobs.index')}}">Jobs</a>
-                        <a class=" text-decoration-none btn-sm btn-info mx-1"
-                           href="{{route('events.index')}}">Events</a>
+                        <a class="text-decoration-none btn-sm btn-info mx-1" href="{{route('client.privateIndex')}}">Client</a>
+                        <a class="text-decoration-none btn-sm btn-info mx-1" href="{{route('numbers.privateIndex')}}">Numbers</a>
+                        <a class="text-decoration-none btn-sm btn-info mx-1" href="{{route('jobs.privateIndex')}}">Jobs</a>
+                        <a class="text-decoration-none btn-sm btn-info mx-1" href="{{route('events.privateIndex')}}">Events</a>
                     </div>
                     <div>
                         <form action="{{route('logout')}}" method="POST">

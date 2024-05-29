@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
@@ -13,28 +14,29 @@ class ClientController extends Controller
      */
     public function index(Request $request)
     {
-        $client = Client::first();
-
-        if($request->expectsJson()){
-            return response()->json($client);
-        }else {
-            return view('client.index', compact('client'));
+        try {
+            $client = Client::first();
+            if ($request->expectsJson()) {
+                return response()->json($client);
+            }
+        } catch (QueryException $e) {
+            return response()->json('error', 'Unable to load record.' . $e);
         }
-
-
-
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-/*    public function create()
+    public function privateIndex(Request $request)
     {
-        return view('client.create');
-    }*/
+        try {
+            $client = Client::first();
+            return view('client.index', compact('client'));
+        } catch (QueryException $e) {
+            session()->flash('error', 'Unable to load records.' . $e);
+        }
+    }
 
-    public function validateAndSave(Request $request, $client): void{
+    public function validateAndSave(Request $request, $client): void
+    {
         $request->validate([
             'name' => ['required'],
             'email' => ['required', 'max:200', 'email'],
@@ -61,36 +63,12 @@ class ClientController extends Controller
 
 
     /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request): RedirectResponse
-    {
-
-        if(Client::all() < 1) {
-
-        $client = new Client();
-
-        $this->validateAndSave($request, $client);
-    }
-        return redirect()->route('client.index');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
         $client = Client::findOrFail($id);
-
-        return view ('client.edit', compact('client'));
+        return view('client.edit', compact('client'));
     }
 
     /**
@@ -99,20 +77,7 @@ class ClientController extends Controller
     public function update(Request $request, string $id): RedirectResponse
     {
         $client = Client::findOrFail($id);
-
         $this->validateAndSave($request, $client);
-
-        return redirect()->route('client.index');
-
-
-
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-
+        return redirect()->route('client.privateIndex');
     }
 }

@@ -26,18 +26,25 @@ class EventController extends Controller
      */
     public function index(Request $request)
     {
-        $events = null;
         try {
             $events = $this->eventService->getAll($request);
+            if ($request->expectsJson()) {
+                return response()->json($events, 200);
+            }
+        }catch (QueryException $e){
+            return response()->json('error', 'Unable to load record.' . $e);
+        }
+    }
+
+    public function privateIndex(Request $request)
+    {
+        try {
+            $events = $this->eventService->getAll($request);
+            return view('events.index', compact('events'));
         }catch (QueryException $e){
             session()->flash('error', 'Unable to load records.' . $e);
         }
 
-        if ($request->expectsJson()) {
-            return response()->json($events, 200);
-        } else {
-            return view('events.index', compact('events'));
-        }
     }
 
     /**
@@ -62,7 +69,7 @@ class EventController extends Controller
         } catch (QueryException  $e) {
             session()->flash('error', 'Unable to created record.' . $e);
         }
-        return redirect()->route('events.index');
+        return redirect()->route('events.privateIndex');
     }
 
     /**
@@ -105,7 +112,7 @@ class EventController extends Controller
         } catch (ModelNotFoundException|QueryException $e) {
             session()->flash('error', 'Record not found or could not be updated.' . $e);
         }
-        return redirect()->route('events.index');
+        return redirect()->route('events.privateIndex');
     }
 
     /**

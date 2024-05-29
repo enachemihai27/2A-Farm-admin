@@ -26,6 +26,7 @@ require __DIR__.'/auth.php';
 function registerResourceRoutes($prefix, $controller, $name): void
 {
     Route::middleware('auth')->prefix($prefix)->as("$name.")->group(function () use ($controller) {
+        Route::get('/private', [$controller, 'privateIndex'])->name('privateIndex');
         Route::get('/create', [$controller, 'create'])->name('create');
         Route::post('/', [$controller, 'store'])->name('store');
         Route::get('/{id}/edit', [$controller, 'edit'])->name('edit');
@@ -37,6 +38,7 @@ function registerResourceRoutes($prefix, $controller, $name): void
 /*Client Routes*/
 Route::get('client', [ClientController::class, 'index'])->name('client.index');
 Route::middleware('auth')->prefix('client')->as('client.')->group(function () {
+    Route::get('/private', [ClientController::class, 'privateIndex'])->name('privateIndex');
     Route::post('/', [ClientController::class, 'store'])->name('store');
     Route::get('/{client}/edit', [ClientController::class, 'edit'])->name('edit');
     Route::put('/{client}', [ClientController::class, 'update'])->name('update');

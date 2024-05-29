@@ -17,7 +17,7 @@
                         @endauth
                     </div>
                     <div class="col-md-3">
-                        <form action="{{ route('jobs.index') }}" method="GET" class="mb-3">
+                        <form action="{{ route('jobs.privateIndex') }}" method="GET" class="mb-3">
                             <div class="input-group">
                                 <input type="text" name="searchName" class="form-control"
                                        placeholder="Search by job name" value="{{request('searchName')}}">

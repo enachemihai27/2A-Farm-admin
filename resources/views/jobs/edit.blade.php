@@ -12,7 +12,7 @@
                         <h4>Edit job</h4>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
-                        <a class="btn-sm btn-success mx-1" href="{{route('jobs.index')}}">Back</a>
+                        <a class="btn-sm btn-success mx-1" href="{{route('jobs.privateIndex')}}">Back</a>
                     </div>
                 </div>
             </div>

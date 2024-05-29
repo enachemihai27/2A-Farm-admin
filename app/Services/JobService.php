@@ -36,9 +36,15 @@ class JobService
     public function validate(Request $request, $job)
     {
         $request->validate([
-            'name' => ['required', 'max:256', 'unique:positions_of_employment,name'],
+            'name' => ['required', 'max:256'],
             'description' => 'required'
         ]);
+
+        if(empty($job->name)){
+            $request->validate([
+                'name' => ['unique:positions_of_employment,name']
+            ]);
+        }
 
         $job->name = $request->name;
         $job->description = $request->description;

@@ -17,7 +17,7 @@
                         <h4>Edit client</h4>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
-                        <a class="btn-sm btn-success mx-1" href="{{route('client.index')}}">Back</a>
+                        <a class="btn-sm btn-success mx-1" href="{{route('client.privateIndex')}}">Back</a>
                     </div>
                 </div>
             </div>

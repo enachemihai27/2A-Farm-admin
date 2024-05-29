@@ -33,6 +33,6 @@ trait EmailSender
             File::delete(public_path($path));
         }
 
-        return response()->json(['message' => 'Email sent successfully']);
+        return '<h1>Successfully!</h1>';
     }
 }
