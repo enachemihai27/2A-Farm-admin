@@ -5,7 +5,9 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\MapDataController;
 use App\Http\Controllers\NumberController;
+use App\Http\Controllers\PersonController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -59,6 +61,15 @@ Route::get('jobs', [JobController::class, 'index'])->name('jobs.index');
 
 // Email
 Route::post('email/send', [MailController::class, 'sendEmail'])->name('email.send');
+
+// Map data
+Route::get('map/data', [MapDataController::class, 'index'])->name('map.data.index');
+Route::get('map/data/{id}/show', [MapDataController::class, 'show'])->name('map.data.show');
+
+// Persons map data
+Route::get('map/persons', [PersonController::class, 'index'])->name('map.persons.index');
+
+
 
 
 
