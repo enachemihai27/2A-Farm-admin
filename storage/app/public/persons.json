@@ -1,0 +1,1138 @@
+[
+    {
+        "name": "FLAVIAN ULEIA",
+        "department": "department_sales_representative",
+        "email": "flavian.uleia@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0736 632 778",
+        "symbol": "AB"
+    },
+    {
+        "name": "RAMONA AFREM",
+        "department": "department_telesales_operator",
+        "email": "ramona.afrem@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0771 373 491",
+        "symbol": "AB"
+    },
+    {
+        "name": "ADRIAN CARDAS",
+        "department": "department_west_area_manager",
+        "email": "adrian.cardas@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0726 301 611",
+        "symbol": "AB"
+    },
+    {
+        "name": "ELENA IVAN",
+        "department": "department_telesales_operator",
+        "email": "elena.ivan@2afarm.ro",
+        "prefix": "+4",
+        "phone": "724099295",
+        "symbol": "AG"
+    },
+    {
+        "name": "SERGIU GRIGORESCU",
+        "department": "department_sales_representative",
+        "email": "sergiu.grigorescu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0737 532 122",
+        "symbol": "AG"
+    },
+    {
+        "name": "ALICE MINDRUTA",
+        "department": "department_telesales_operator",
+        "email": "alice.mindruta@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0799 992 349",
+        "symbol": "AR"
+    },
+    {
+        "name": "ALIN PESCARU",
+        "department": "department_sales_representative",
+        "email": "alin.pescaru@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0773 321 027",
+        "symbol": "AR"
+    },
+    {
+        "name": "ADRIAN CARDAS",
+        "department": "department_west_area_manager",
+        "email": "adrian.cardas@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0726 301 611",
+        "symbol": "AR"
+    },
+    {
+        "name": "Diana Cozma",
+        "department": "department_client_service_analyst",
+        "email": "diana.cozma@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0736 632 779",
+        "symbol": "BC"
+    },
+    {
+        "name": "BOGDAN BABICI",
+        "department": "department_sales_representative",
+        "email": "bogdan.babici@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0771 243 059",
+        "symbol": "BC"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "BC"
+    },
+    {
+        "name": "FLORIN CIOBANU",
+        "department": "department_sales_representative",
+        "email": "florin.ciobanu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0724 004 811",
+        "symbol": "BC"
+    },
+    {
+        "name": "ADRIAN CARDAS",
+        "department": "department_west_area_manager",
+        "email": "adrian.cardas@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0726 301 611",
+        "symbol": "BH"
+    },
+    {
+        "name": "DANIEL FLORE",
+        "department": "department_sales_representative",
+        "email": "daniel.flore@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0772 082 068",
+        "symbol": "BH"
+    },
+    {
+        "name": "LOREDANA CRETAN",
+        "department": "department_client_service_analyst",
+        "email": "loredana@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0720 529 779",
+        "symbol": "BH"
+    },
+    {
+        "name": "BRANDUSA SOPTEREAN",
+        "department": "department_telesales_operator",
+        "email": "brandusa.sopterean@2afarm.ro",
+        "prefix": "+4",
+        "phone": "723197324",
+        "symbol": "BN"
+    },
+    {
+        "name": "ADRIAN CARDAS",
+        "department": "department_west_area_manager",
+        "email": "adrian.cardas@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0726 301 611",
+        "symbol": "BN"
+    },
+    {
+        "name": "RARES SENPETERI",
+        "department": "department_sales_representative",
+        "email": "rares.senpeteri@2afarm.ro",
+        "prefix": "+4",
+        "phone": "770605273",
+        "symbol": "BN"
+    },
+    {
+        "name": "ALINA GINGIOVEANU",
+        "department": "department_telesales_operator",
+        "email": "alina.gingioveanu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0774 472 989",
+        "symbol": "BR"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "BR"
+    },
+    {
+        "name": "BOGDAN BORDEIANU",
+        "department": "department_sales_representative",
+        "email": "bogdan.bordeianu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "723671394",
+        "symbol": "BR"
+    },
+    {
+        "name": "DANIELA MOLDOVEANU",
+        "department": "department_sales_representative",
+        "email": "daniela.moldoveanu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0723 671 394",
+        "symbol": "BR"
+    },
+    {
+        "name": "ALINA BOTEZATU",
+        "department": "department_sales_representative",
+        "email": "alina.botezatu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0771 243 059",
+        "symbol": "BT"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "BT"
+    },
+    {
+        "name": "FLORIN CIOBANU",
+        "department": "department_sales_representative",
+        "email": "florin.ciobanu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0724 004 811",
+        "symbol": "BT"
+    },
+    {
+        "name": "PAULA MIHAI",
+        "department": "department_client_service_analyst",
+        "email": "paula.mihai@2afarm.ro",
+        "prefix": "+4",
+        "phone": "723671459",
+        "symbol": "BT"
+    },
+    {
+        "name": "GEORGE PLESA",
+        "department": "department_telesales_operator",
+        "email": "george.plesa@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0774 479 052",
+        "symbol": "B"
+    },
+    {
+        "name": "RALUCA FILFAN",
+        "department": "department_client_service_analyst",
+        "email": "raluca.filfan@2afarm.ro",
+        "prefix": "+4",
+        "phone": "723671383",
+        "symbol": "B"
+    },
+    {
+        "name": "CLAUDIA COTOIA",
+        "department": "department_sales_representative",
+        "email": "claudia.cotoia@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0737 532 125",
+        "symbol": "B"
+    },
+    {
+        "name": "ROXANA TITU",
+        "department": "department_telesales_operator",
+        "email": "roxana.titu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0774 426 886",
+        "symbol": "B"
+    },
+    {
+        "name": "VALENTIN PADURE",
+        "department": "department_sales_representative",
+        "email": "valentin.padure@2afarm.ro",
+        "prefix": "+4",
+        "phone": "770997929",
+        "symbol": "B"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "B"
+    },
+    {
+        "name": "ADRIAN CARDAS",
+        "department": "department_west_area_manager",
+        "email": "adrian.cardas@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0726 301 611",
+        "symbol": "BV"
+    },
+    {
+        "name": "ALINA GINGIOVEANU",
+        "department": "department_telesales_operator",
+        "email": "alina.gingioveanu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0774 472 989",
+        "symbol": "BZ"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "BZ"
+    },
+    {
+        "name": "BOGDAN BORDEIANU",
+        "department": "department_sales_representative",
+        "email": "bogdan.bordeianu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "723671394",
+        "symbol": "BZ"
+    },
+    {
+        "name": "DANIELA MOLDOVEANU",
+        "department": "department_sales_representative",
+        "email": "daniela.moldoveanu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0723 671 394",
+        "symbol": "BZ"
+    },
+    {
+        "name": "BRANDUSA SOPTEREAN",
+        "department": "department_telesales_operator",
+        "email": "brandusa.sopterean@2afarm.ro",
+        "prefix": "+4",
+        "phone": "723197324",
+        "symbol": "CJ"
+    },
+    {
+        "name": "ADRIAN CARDAS",
+        "department": "department_west_area_manager",
+        "email": "adrian.cardas@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0726 301 611",
+        "symbol": "CJ"
+    },
+    {
+        "name": "RARES SENPETERI",
+        "department": "department_sales_representative",
+        "email": "rares.senpeteri@2afarm.ro",
+        "prefix": "+4",
+        "phone": "770605273",
+        "symbol": "CJ"
+    },
+    {
+        "name": "CLAUDIA COTOIA",
+        "department": "department_sales_representative",
+        "email": "claudia.cotoia@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0737 532 125",
+        "symbol": "CL"
+    },
+    {
+        "name": "ROXANA TITU",
+        "department": "department_telesales_operator",
+        "email": "roxana.titu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0774 426 886",
+        "symbol": "CL"
+    },
+    {
+        "name": "ALINA GINGIOVEANU",
+        "department": "department_telesales_operator",
+        "email": "alina.gingioveanu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0774 472 989",
+        "symbol": "CL"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "CL"
+    },
+    {
+        "name": "ALICE MINDRUTA",
+        "department": "department_telesales_operator",
+        "email": "alice.mindruta@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0799 992 349",
+        "symbol": "CS"
+    },
+    {
+        "name": "ALIN PESCARU",
+        "department": "department_sales_representative",
+        "email": "alin.pescaru@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0773 321 027",
+        "symbol": "CS"
+    },
+    {
+        "name": "ADRIAN CARDAS",
+        "department": "department_west_area_manager",
+        "email": "adrian.cardas@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0726 301 611",
+        "symbol": "CS"
+    },
+    {
+        "name": "DANIELA STEFAN",
+        "department": "department_telesales_operator",
+        "email": "daniela.stefan@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0721 930 577",
+        "symbol": "CT"
+    },
+    {
+        "name": "Diana Cozma",
+        "department": "department_client_service_analyst",
+        "email": "diana.cozma@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0736 632 779",
+        "symbol": "CT"
+    },
+    {
+        "name": "ALINA GINGIOVEANU",
+        "department": "department_telesales_operator",
+        "email": "alina.gingioveanu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0774 472 989",
+        "symbol": "CT"
+    },
+    {
+        "name": "ROXANA LEICA",
+        "department": "department_sales_representative",
+        "email": "roxana.leica@2afarm.ro",
+        "prefix": "+4",
+        "phone": "720047822",
+        "symbol": "CT"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "CT"
+    },
+    {
+        "name": "ADRIAN CARDAS",
+        "department": "department_west_area_manager",
+        "email": "adrian.cardas@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0726 301 611",
+        "symbol": "CV"
+    },
+    {
+        "name": "RALUCA FILFAN",
+        "department": "department_client_service_analyst",
+        "email": "raluca.filfan@2afarm.ro",
+        "prefix": "+4",
+        "phone": "723671383",
+        "symbol": "DB"
+    },
+    {
+        "name": "VALENTIN PADURE",
+        "department": "department_sales_representative",
+        "email": "valentin.padure@2afarm.ro",
+        "prefix": "+4",
+        "phone": "770997929",
+        "symbol": "DB"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "DB"
+    },
+    {
+        "name": "VIORICA ILINOIU",
+        "department": "department_sales_representative",
+        "email": "viorica.ilinoiu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0722 372 179",
+        "symbol": "DJ"
+    },
+    {
+        "name": "DANIELA STEFAN",
+        "department": "department_telesales_operator",
+        "email": "daniela.stefan@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0721 930 577",
+        "symbol": "DJ"
+    },
+    {
+        "name": "GABRIELA BRAȘOVEANU",
+        "department": "department_telesales_operator",
+        "email": "gabriela.brasoveanu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0721 280 217",
+        "symbol": "DJ"
+    },
+    {
+        "name": "BOGDAN CHIREA",
+        "department": "department_sales_representative",
+        "email": "bogdan.chirea@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0730 034 465",
+        "symbol": "DJ"
+    },
+    {
+        "name": "CLAUDIU ADAM",
+        "department": "department_sales_representative_pharmaz",
+        "email": "claudiu.adam@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0770 980 137",
+        "symbol": "DJ"
+    },
+    {
+        "name": "BOGDAN CHIREA",
+        "department": "department_sales_representative",
+        "email": "bogdan.chirea@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0730 034 465",
+        "symbol": "GJ"
+    },
+    {
+        "name": "LAURA COSMELEATA",
+        "department": "department_telesales_operator",
+        "email": "laura.cosmeleata@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0774 473 046",
+        "symbol": "GJ"
+    },
+    {
+        "name": "CLAUDIU ADAM",
+        "department": "department_sales_representative_pharmaz",
+        "email": "claudiu.adam@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0770 980 137",
+        "symbol": "GJ"
+    },
+    {
+        "name": "ALINA GINGIOVEANU",
+        "department": "department_telesales_operator",
+        "email": "alina.gingioveanu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0774 472 989",
+        "symbol": "GL"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "GL"
+    },
+    {
+        "name": "BOGDAN BORDEIANU",
+        "department": "department_sales_representative",
+        "email": "bogdan.bordeianu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "723671394",
+        "symbol": "GL"
+    },
+    {
+        "name": "DANIELA MOLDOVEANU",
+        "department": "department_sales_representative",
+        "email": "daniela.moldoveanu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0723 671 394",
+        "symbol": "GL"
+    },
+    {
+        "name": "GEORGE PLESA",
+        "department": "department_telesales_operator",
+        "email": "george.plesa@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0774 479 052",
+        "symbol": "GR"
+    },
+    {
+        "name": "VALENTIN PADURE",
+        "department": "department_sales_representative",
+        "email": "valentin.padure@2afarm.ro",
+        "prefix": "+4",
+        "phone": "770997929",
+        "symbol": "GR"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "GR"
+    },
+    {
+        "name": "FLAVIAN ULEIA",
+        "department": "department_sales_representative",
+        "email": "flavian.uleia@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0736 632 778",
+        "symbol": "HD"
+    },
+    {
+        "name": "RAMONA AFREM",
+        "department": "department_telesales_operator",
+        "email": "ramona.afrem@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0771 373 491",
+        "symbol": "HD"
+    },
+    {
+        "name": "ADRIAN CARDAS",
+        "department": "department_west_area_manager",
+        "email": "adrian.cardas@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0726 301 611",
+        "symbol": "HD"
+    },
+    {
+        "name": "ADRIAN CARDAS",
+        "department": "department_west_area_manager",
+        "email": "adrian.cardas@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0726 301 611",
+        "symbol": "HR"
+    },
+    {
+        "name": "FLORIN OLTEAN",
+        "department": "department_sales_representative",
+        "email": "florin.oltean@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0799 964 633",
+        "symbol": "HR"
+    },
+    {
+        "name": "BIANCA MIRCEA",
+        "department": "department_telesales_operator",
+        "email": "bianca.mircea@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0723 197 716",
+        "symbol": "HR"
+    },
+    {
+        "name": "GEORGE PLESA",
+        "department": "department_telesales_operator",
+        "email": "george.plesa@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0774 479 052",
+        "symbol": "IF"
+    },
+    {
+        "name": "CLAUDIA COTOIA",
+        "department": "department_sales_representative",
+        "email": "claudia.cotoia@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0737 532 125",
+        "symbol": "IF"
+    },
+    {
+        "name": "ROXANA TITU",
+        "department": "department_telesales_operator",
+        "email": "roxana.titu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0774 426 886",
+        "symbol": "IF"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "IF"
+    },
+    {
+        "name": "CLAUDIA COTOIA",
+        "department": "department_sales_representative",
+        "email": "claudia.cotoia@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0737 532 125",
+        "symbol": "IL"
+    },
+    {
+        "name": "ROXANA TITU",
+        "department": "department_telesales_operator",
+        "email": "roxana.titu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0774 426 886",
+        "symbol": "IL"
+    },
+    {
+        "name": "ALINA GINGIOVEANU",
+        "department": "department_telesales_operator",
+        "email": "alina.gingioveanu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0774 472 989",
+        "symbol": "IL"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "IL"
+    },
+    {
+        "name": "BOGDAN BABICI",
+        "department": "department_sales_representative",
+        "email": "bogdan.babici@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0771 243 059",
+        "symbol": "IS"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "IS"
+    },
+    {
+        "name": "FLORIN CIOBANU",
+        "department": "department_sales_representative",
+        "email": "florin.ciobanu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0724 004 811",
+        "symbol": "IS"
+    },
+    {
+        "name": "PAULA MIHAI",
+        "department": "department_client_service_analyst",
+        "email": "paula.mihai@2afarm.ro",
+        "prefix": "+4",
+        "phone": "723671459",
+        "symbol": "IS"
+    },
+    {
+        "name": "BOGDAN CHIREA",
+        "department": "department_sales_representative",
+        "email": "bogdan.chirea@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0730 034 465",
+        "symbol": "MH"
+    },
+    {
+        "name": "CLAUDIU ADAM",
+        "department": "department_sales_representative_pharmaz",
+        "email": "claudiu.adam@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0770 980 137",
+        "symbol": "MH"
+    },
+    {
+        "name": "KARLA VLAD",
+        "department": "department_client_service_analyst",
+        "email": "karla.vlad@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0724 516 244",
+        "symbol": "MH"
+    },
+    {
+        "name": "ADRIAN CARDAS",
+        "department": "department_west_area_manager",
+        "email": "adrian.cardas@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0726 301 611",
+        "symbol": "MM"
+    },
+    {
+        "name": "CLAUDIU ARDELEAN",
+        "department": "department_sales_representative",
+        "email": "claudiu.ardelean@2afarm.ro",
+        "prefix": "+4",
+        "phone": "723197509",
+        "symbol": "MM"
+    },
+    {
+        "name": "ERZSEBET DOBARIU",
+        "department": "department_client_service_analyst",
+        "email": "erzsebet.dobariu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "720529778",
+        "symbol": "MM"
+    },
+    {
+        "name": "ADRIAN CARDAS",
+        "department": "department_west_area_manager",
+        "email": "adrian.cardas@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0726 301 611",
+        "symbol": "MS"
+    },
+    {
+        "name": "FLORIN OLTEAN",
+        "department": "department_sales_representative",
+        "email": "florin.oltean@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0799 964 633",
+        "symbol": "MS"
+    },
+    {
+        "name": "ERZSEBET DOBARIU",
+        "department": "department_client_service_analyst",
+        "email": "erzsebet.dobariu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "720529778",
+        "symbol": "MS"
+    },
+    {
+        "name": "Diana Cozma",
+        "department": "department_client_service_analyst",
+        "email": "diana.cozma@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0736 632 779",
+        "symbol": "NT"
+    },
+    {
+        "name": "BOGDAN BABICI",
+        "department": "department_sales_representative",
+        "email": "bogdan.babici@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0771 243 059",
+        "symbol": "NT"
+    },
+    {
+        "name": "ALINA BOTEZATU",
+        "department": "department_sales_representative",
+        "email": "alina.botezatu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0771 243 059",
+        "symbol": "NT"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "NT"
+    },
+    {
+        "name": "ELENA IVAN",
+        "department": "department_telesales_operator",
+        "email": "elena.ivan@2afarm.ro",
+        "prefix": "+4",
+        "phone": "724099295",
+        "symbol": "OT"
+    },
+    {
+        "name": "LAURA COSMELEATA",
+        "department": "department_telesales_operator",
+        "email": "laura.cosmeleata@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0774 473 046",
+        "symbol": "OT"
+    },
+    {
+        "name": "CLAUDIU ADAM",
+        "department": "department_sales_representative_pharmaz",
+        "email": "claudiu.adam@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0770 980 137",
+        "symbol": "OT"
+    },
+    {
+        "name": "VIORICA ILINOIU",
+        "department": "department_sales_representative",
+        "email": "viorica.ilinoiu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0722 372 179",
+        "symbol": "OT"
+    },
+    {
+        "name": "BOGDAN CHIREA",
+        "department": "department_sales_representative",
+        "email": "bogdan.chirea@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0730 034 465",
+        "symbol": "OT"
+    },
+    {
+        "name": "RALUCA FILFAN",
+        "department": "department_client_service_analyst",
+        "email": "raluca.filfan@2afarm.ro",
+        "prefix": "+4",
+        "phone": "723671383",
+        "symbol": "PH"
+    },
+    {
+        "name": "VALENTIN PADURE",
+        "department": "department_sales_representative",
+        "email": "valentin.padure@2afarm.ro",
+        "prefix": "+4",
+        "phone": "770997929",
+        "symbol": "PH"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "PH"
+    },
+    {
+        "name": "FLAVIAN ULEIA",
+        "department": "department_sales_representative",
+        "email": "flavian.uleia@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0736 632 778",
+        "symbol": "SB"
+    },
+    {
+        "name": "RAMONA AFREM",
+        "department": "department_telesales_operator",
+        "email": "ramona.afrem@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0771 373 491",
+        "symbol": "SB"
+    },
+    {
+        "name": "ADRIAN CARDAS",
+        "department": "department_west_area_manager",
+        "email": "adrian.cardas@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0726 301 611",
+        "symbol": "SB"
+    },
+    {
+        "name": "ADRIAN CARDAS",
+        "department": "department_west_area_manager",
+        "email": "adrian.cardas@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0726 301 611",
+        "symbol": "SJ"
+    },
+    {
+        "name": "CLAUDIU ARDELEAN",
+        "department": "department_sales_representative",
+        "email": "claudiu.ardelean@2afarm.ro",
+        "prefix": "+4",
+        "phone": "723197509",
+        "symbol": "SJ"
+    },
+    {
+        "name": "ERZSEBET DOBARIU",
+        "department": "department_client_service_analyst",
+        "email": "erzsebet.dobariu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "720529778",
+        "symbol": "SJ"
+    },
+    {
+        "name": "ADRIAN CARDAS",
+        "department": "department_west_area_manager",
+        "email": "adrian.cardas@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0726 301 611",
+        "symbol": "SM"
+    },
+    {
+        "name": "DANIEL FLORE",
+        "department": "department_sales_representative",
+        "email": "daniel.flore@2afarm.ro",
+        "prefix": "+4",
+        "phone": "772082068",
+        "symbol": "SM"
+    },
+    {
+        "name": "LOREDANA CRETAN",
+        "department": "department_client_service_analyst",
+        "email": "loredana@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0720 529 779",
+        "symbol": "SM"
+    },
+    {
+        "name": "ALINA BOTEZATU",
+        "department": "department_sales_representative",
+        "email": "alina.botezatu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0771 243 059",
+        "symbol": "SV"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "SV"
+    },
+    {
+        "name": "FLORIN CIOBANU",
+        "department": "department_sales_representative",
+        "email": "florin.ciobanu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0724 004 811",
+        "symbol": "SV"
+    },
+    {
+        "name": "PAULA MIHAI",
+        "department": "department_client_service_analyst",
+        "email": "paula.mihai@2afarm.ro",
+        "prefix": "+4",
+        "phone": "723671459",
+        "symbol": "SV"
+    },
+    {
+        "name": "Diana Cozma",
+        "department": "department_client_service_analyst",
+        "email": "diana.cozma@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0736 632 779",
+        "symbol": "TL"
+    },
+    {
+        "name": "ROXANA LEICA",
+        "department": "department_sales_representative",
+        "email": "roxana.leica@2afarm.ro",
+        "prefix": "+4",
+        "phone": "720047822",
+        "symbol": "TL"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "TL"
+    },
+    {
+        "name": "ALICE MINDRUTA",
+        "department": "department_telesales_operator",
+        "email": "alice.mindruta@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0799 992 349",
+        "symbol": "TM"
+    },
+    {
+        "name": "ALIN PESCARU",
+        "department": "department_sales_representative",
+        "email": "alin.pescaru@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0773 321 027",
+        "symbol": "TM"
+    },
+    {
+        "name": "ADRIAN CARDAS",
+        "department": "department_west_area_manager",
+        "email": "adrian.cardas@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0726 301 611",
+        "symbol": "TM"
+    },
+    {
+        "name": "GEORGE PLESA",
+        "department": "department_telesales_operator",
+        "email": "george.plesa@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0774 479 052",
+        "symbol": "TR"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "TR"
+    },
+    {
+        "name": "CLAUDIU ADAM",
+        "department": "department_sales_representative_pharmaz",
+        "email": "claudiu.adam@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0770 980 137",
+        "symbol": "VL"
+    },
+    {
+        "name": "SERGIU GRIGORESCU",
+        "department": "department_sales_representative",
+        "email": "sergiu.grigorescu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0737 532 122",
+        "symbol": "VL"
+    },
+    {
+        "name": "KARLA VLAD",
+        "department": "department_client_service_analyst",
+        "email": "karla.vlad@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0724 516 244",
+        "symbol": "VL"
+    },
+    {
+        "name": "ALINA GINGIOVEANU",
+        "department": "department_telesales_operator",
+        "email": "alina.gingioveanu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0774 472 989",
+        "symbol": "VN"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "VN"
+    },
+    {
+        "name": "BOGDAN BORDEIANU",
+        "department": "department_sales_representative",
+        "email": "bogdan.bordeianu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "723671394",
+        "symbol": "VN"
+    },
+    {
+        "name": "DANIELA MOLDOVEANU",
+        "department": "department_sales_representative",
+        "email": "daniela.moldoveanu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0723 671 394",
+        "symbol": "VN"
+    },
+    {
+        "name": "Diana Cozma",
+        "department": "department_client_service_analyst",
+        "email": "diana.cozma@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0736 632 779",
+        "symbol": "VS"
+    },
+    {
+        "name": "BOGDAN BABICI",
+        "department": "department_sales_representative",
+        "email": "bogdan.babici@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0771 243 059",
+        "symbol": "VS"
+    },
+    {
+        "name": "SORIN TOTORA",
+        "department": "department_south_2_area_manager",
+        "email": "sorin.totora@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0728 188 032",
+        "symbol": "VS"
+    },
+    {
+        "name": "FLORIN CIOBANU",
+        "department": "department_sales_representative",
+        "email": "florin.ciobanu@2afarm.ro",
+        "prefix": "+4",
+        "phone": "0724 004 811",
+        "symbol": "VS"
+    }
+]
