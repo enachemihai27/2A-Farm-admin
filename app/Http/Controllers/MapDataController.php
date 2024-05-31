@@ -15,6 +15,14 @@ class MapDataController extends Controller
     {
         try {
             $map_data = MapData::all();
+            
+            $map_data->transform(function ($item) {
+                if (is_null($item->pathColor)) {
+                    $item->makeHidden('pathColor');
+                }
+                return $item;
+            });
+
             $map_data->makeHidden(['primary_key', 'created_at', 'updated_at']);
             return response()->json($map_data);
         } catch (QueryException|ModelNotFoundException $e) {

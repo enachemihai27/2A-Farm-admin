@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('symbol')->unique();
             $table->text('path');
             $table->text('textPath');
-            $table->string('pathColor');
+            $table->string('pathColor')->nullable();
             $table->timestamps();
         });
     }
