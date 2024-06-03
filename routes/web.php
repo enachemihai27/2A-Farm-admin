@@ -27,7 +27,7 @@ require __DIR__.'/auth.php';
 
 function registerResourceRoutes($prefix, $controller, $name): void
 {
-    Route::middleware('auth')->prefix($prefix)->as("$name.")->group(function () use ($controller) {
+    Route::middleware(['auth'])->prefix($prefix)->as("$name.")->group(function () use ($controller) {
         Route::get('/private', [$controller, 'privateIndex'])->name('privateIndex');
         Route::get('/create', [$controller, 'create'])->name('create');
         Route::post('/', [$controller, 'store'])->name('store');
@@ -67,7 +67,9 @@ Route::get('map/data', [MapDataController::class, 'index'])->name('map.data.inde
 Route::get('map/data/{id}/show', [MapDataController::class, 'show'])->name('map.data.show');
 
 //Representative persons
-Route::get('map/persons', [PersonController::class, 'index'])->name('map.persons.index');
+Route::middleware(['cors'])->group(function ()  {
+    Route::get('map/persons', [PersonController::class, 'index'])->name('map.persons.index');
+});
 registerResourceRoutes('persons', PersonController::class, 'persons');
 
 
