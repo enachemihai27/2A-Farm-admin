@@ -4,6 +4,8 @@
 namespace App\Services;
 
 use App\Models\MapData;
+use App\Models\Person;
+use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
 
 
@@ -63,6 +65,31 @@ class PersonService
         }
 
         return $result;
+    }
+
+    public function getAll(Request $request)
+    {
+
+        $persons = null;
+        $searchName = $request->input('searchName');
+        $searchJudet = $request->input('searchJudet');
+        $perPage = $request->input('per_page', 20);
+
+        try {
+            $persons = Person::query()
+                ->when($searchName, function ($query, $searchName) {
+                    return $query->where('representative_people.name', 'like', '%' . $searchName . '%');
+                })
+                ->when($searchJudet, function ($query, $searchJudet) {
+                    return $query->where('representative_people.symbol', 'like', '%' . $searchJudet . '%');
+                })
+                ->paginate($perPage);
+
+
+        }catch (QueryException $e){
+            session()->flash('error', 'Unable to load records.' . $e);
+        }
+        return $persons;
     }
 
 }

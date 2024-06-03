@@ -15,7 +15,7 @@ class MapDataController extends Controller
     {
         try {
             $map_data = MapData::all();
-            
+
             $map_data->transform(function ($item) {
                 if (is_null($item->pathColor)) {
                     $item->makeHidden('pathColor');

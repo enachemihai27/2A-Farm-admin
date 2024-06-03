@@ -18,4 +18,8 @@ class Person extends Model
         return $this->belongsTo(MapData::class, 'symbol', 'symbol');
     }
 
+    public function representativesDepartments(): BelongsTo
+    {
+        return $this->belongsTo(Department::class, "department", "department");
+    }
 }

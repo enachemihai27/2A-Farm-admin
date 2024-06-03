@@ -66,8 +66,9 @@ Route::post('email/send', [MailController::class, 'sendEmail'])->name('email.sen
 Route::get('map/data', [MapDataController::class, 'index'])->name('map.data.index');
 Route::get('map/data/{id}/show', [MapDataController::class, 'show'])->name('map.data.show');
 
-// Persons map data
+//Representative persons
 Route::get('map/persons', [PersonController::class, 'index'])->name('map.persons.index');
+registerResourceRoutes('persons', PersonController::class, 'persons');
 
 
 
