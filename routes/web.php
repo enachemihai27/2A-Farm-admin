@@ -38,7 +38,6 @@ function registerResourceRoutes($prefix, $controller, $name): void
 }
 
 /*Client Routes*/
-Route::get('client', [ClientController::class, 'index'])->name('client.index');
 Route::middleware('auth')->prefix('client')->as('client.')->group(function () {
     Route::get('/private', [ClientController::class, 'privateIndex'])->name('privateIndex');
     Route::post('/', [ClientController::class, 'store'])->name('store');
@@ -46,33 +45,39 @@ Route::middleware('auth')->prefix('client')->as('client.')->group(function () {
     Route::put('/{client}', [ClientController::class, 'update'])->name('update');
 });
 
+
 // Events Routes
 registerResourceRoutes('events', EventController::class, 'events');
-Route::get('events', [EventController::class, 'index'])->name('events.index');
-Route::get('events/{event}/show', [EventController::class, 'show'])->name('events.show');
+
+
 
 // Numbers Routes
 registerResourceRoutes('numbers', NumberController::class, 'numbers');
-Route::get('numbers', [NumberController::class, 'index'])->name('numbers.index');
+
 
 // Jobs Routes
 registerResourceRoutes('jobs', JobController::class, 'jobs');
-Route::get('jobs', [JobController::class, 'index'])->name('jobs.index');
+
 
 // Email
 Route::post('email/send', [MailController::class, 'sendEmail'])->name('email.send');
 
-// Map data
-Route::get('map/data', [MapDataController::class, 'index'])->name('map.data.index');
-Route::get('map/data/{id}/show', [MapDataController::class, 'show'])->name('map.data.show');
 
 //Representative persons
-Route::middleware(['cors'])->group(function ()  {
-    Route::get('map/persons', [PersonController::class, 'index'])->name('map.persons.index');
-});
 registerResourceRoutes('persons', PersonController::class, 'persons');
 
 
+Route::middleware(['cors'])->prefix('/api')->group(function () {
+    Route::get('client', [ClientController::class, 'index'])->name('client.index');
+    Route::get('events', [EventController::class, 'index'])->name('events.index');
+    Route::get('numbers', [NumberController::class, 'index'])->name('numbers.index');
+    Route::get('jobs', [JobController::class, 'index'])->name('jobs.index');
+    Route::get('map/data', [MapDataController::class, 'index'])->name('map.data.index');
+    Route::get('map/persons', [PersonController::class, 'index'])->name('map.persons.index');
+
+    Route::get('map/data/{id}/show', [MapDataController::class, 'show'])->name('map.data.show');
+    Route::get('events/{event}/show', [EventController::class, 'show'])->name('events.show');
+});
 
 
 
