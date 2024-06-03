@@ -76,12 +76,15 @@ class PersonService
         $perPage = $request->input('per_page', 20);
 
         try {
+
             $persons = Person::query()
+                ->leftJoin('map_data', 'representative_people.symbol', '=', 'map_data.symbol')
+                ->select('representative_people.*', 'map_data.title as map_data_title')
                 ->when($searchName, function ($query, $searchName) {
                     return $query->where('representative_people.name', 'like', '%' . $searchName . '%');
                 })
                 ->when($searchJudet, function ($query, $searchJudet) {
-                    return $query->where('representative_people.symbol', 'like', '%' . $searchJudet . '%');
+                    return $query->where('map_data.title', 'like', '%' . $searchJudet . '%');
                 })
                 ->paginate($perPage);
 
@@ -90,6 +93,27 @@ class PersonService
             session()->flash('error', 'Unable to load records.' . $e);
         }
         return $persons;
+    }
+
+    public function validateAndAdd(Request $request, $person){
+        $request->validate([
+            'name' => ['required'],
+            'department' => ['required', 'exists:departments,department'],
+            'email' => ['required', 'email'],
+            'symbol' => ['required', 'exists:map_data,symbol'],
+            'prefix' => ['required'],
+            'phone' => ['required']
+        ]);
+
+
+        $person->name = $request->name;
+        $person->department = $request->department;
+        $person->email = $request->email;
+        $person->symbol = $request->symbol;
+        $person->prefix = $request->prefix;
+        $person->phone = $request->phone;
+
+        return $person;
     }
 
 }

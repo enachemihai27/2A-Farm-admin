@@ -9,31 +9,69 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>Edit job</h4>
+                        <h4>Edit person</h4>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
-                        <a class="btn-sm btn-success mx-1" href="{{route('jobs.privateIndex')}}">Back</a>
+                        <a class="btn-sm btn-success mx-1" href="{{route('persons.privateIndex')}}">Back</a>
                     </div>
                 </div>
             </div>
 
             <div class="card-body">
-                <form action="{{route('jobs.update', $job->id)}}" method="POST">
+                <form action="{{route('persons.update', $person->id)}}" method="POST">
                     @csrf
                     @method('PUT')
 
                     <div class="form-group">
                         <label for="name" class="form-label">Name</label>
-                        <input id="name" type="text" class="form-control" name="name" value="{{$job->name}}">
+                        <input id="name" type="text" class="form-control" name="name" value="{{$person->name}}">
                     </div>
 
                     <div class="form-group">
-                        <label for="description" class="form-label mt-2">Description</label>
-                        <textarea rows="10" id="description" type="text" class="form-control" name="description">{{$job->description}}</textarea>
+                        <label for="department" class="form-label">Department</label>
+                        <select id="department" type="text" class="form-control" name="department">
+                            <option value=" ">Select</option>
+                            @foreach($departments as $department)
+                                <option
+                                    {{$department->department == $person->department ? 'selected' : ''}}  value="{{$department->department}}">{{$department->label}}</option>
+                            @endforeach
+                        </select>
                     </div>
 
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input id="email" type="text" class="form-control" name="email" value="{{$person->email}}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input id="email" type="text" class="form-control" name="email" value="{{$person->email}}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="symbol" class="form-label">Judet</label>
+                        <select id="symbol" type="text" class="form-control" name="symbol">
+                            <option value=" ">Select</option>
+                            @foreach($judete as $judet)
+                                <option
+                                    {{$judet->symbol == $person->symbol ? 'selected' : ''}}  value="{{$judet->symbol}}">{{$judet->title}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prefix" class="form-label">Prefix</label>
+                        <input id="prefix" type="text" class="form-control" name="prefix" value="{{$person->prefix}}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input id="phone" type="text" class="form-control" name="phone" value="{{$person->phone}}">
+                    </div>
+
+
                     <div class="form-group mt-3">
-                       <button class="btn btn-primary">Submit</button>
+                        <button class="btn btn-primary">Submit</button>
                     </div>
 
                 </form>

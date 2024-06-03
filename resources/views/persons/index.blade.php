@@ -57,7 +57,7 @@
                                 <td>{{$person->name}}</td>
                                 <td>{{$person->representativesDepartments->label}} </td>
                                 <td>{{$person->email}}</td>
-                                <td>{{$person->symbol}}</td>
+                                <td>{{$person->map_data->title}}</td>
                                 <td>{{$person->prefix}}</td>
                                 <td>{{$person->phone}}</td>
                                 <td>

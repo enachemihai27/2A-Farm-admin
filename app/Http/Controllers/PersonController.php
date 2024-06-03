@@ -46,9 +46,13 @@ class PersonController extends Controller
      */
     public function create()
     {
-        $symbols = MapData::all();
-        $departments = Department::all();
-        return view('persons.create', compact('symbols', 'departments'));
+        try {
+            $symbols = MapData::all();
+            $departments = Department::all();
+            return view('persons.create', compact('symbols', 'departments'));
+        } catch (QueryException $e) {
+            return redirect()->back()->withErrors(['error' => 'Unable to find records. ' . $e->getMessage()]);
+        }
     }
 
     /**
@@ -56,33 +60,15 @@ class PersonController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => ['required'],
-            'department' => ['required', 'exists:departments,department'],
-            'email' => ['required', 'email'],
-            'symbol' => ['required', 'exists:map_data,symbol'],
-            'prefix' => ['required'],
-            'phone' => ['required', 'regex:/^[0-9]{10}$/']
-        ]);
-
-        $person = new Person();
-
-        $person->name = $request->name;
-        $person->department = $request->department;
-        $person->email = $request->email;
-        $person->symbol = $request->symbol;
-        $person->prefix = $request->prefix;
-        $person->phone = $request->phone;
         try {
-
+            $newPerson = new Person();
+            $person = $this->personService->validateAndAdd($request, $newPerson);
             $person->save();
-
+            session()->flash('success', 'Person created successfully.');
         } catch (QueryException $e) {
             return redirect()->back()->withErrors(['error' => 'Unable to create record. ' . $e->getMessage()]);
         }
         return redirect()->route('persons.privateIndex');
-
-
     }
 
     /**
@@ -100,7 +86,17 @@ class PersonController extends Controller
     public
     function edit(string $id)
     {
-        //
+        $person = null;
+        $departments = null;
+        $judete = null;
+        try {
+            $person = Person::findOrFail($id);
+            $departments = Department::all();
+            $judete = MapData::all();
+        } catch (ModelNotFoundException $e) {
+            session()->flash('error', 'Record not found.' . $e);
+        }
+        return view('persons.edit', compact('person', 'departments', 'judete'));
     }
 
     /**
@@ -109,14 +105,21 @@ class PersonController extends Controller
     public
     function update(Request $request, string $id)
     {
-        //
+        try {
+            $editPerson = Person::findOrFail($id);
+            $person = $this->personService->validateAndAdd($request, $editPerson);
+            $person->save();
+            session()->flash('success', 'Person updated successfully.');
+        } catch (QueryException $e) {
+            return redirect()->back()->withErrors(['error' => 'Unable to create record. ' . $e->getMessage()]);
+        }
+        return redirect()->route('persons.privateIndex');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public
-    function destroy(string $id)
+    public function destroy(string $id)
     {
         try {
             $person = Person::findOrFail($id);
