@@ -23,6 +23,7 @@
                         <a class="text-decoration-none text-black hover:text-gray-500 text-sm mx-2" href="{{route('events.privateIndex')}}">EVENIMENTE</a>
                         <a class="text-decoration-none text-black hover:text-gray-500 text-sm mx-2" href="{{route('persons.privateIndex')}}">REPREZENTANTI</a>
                         <a class="text-decoration-none text-black hover:text-gray-500 text-sm mx-2" href="{{route('partners.privateIndex')}}">PARTENERI</a>
+                        <a class="text-decoration-none text-black hover:text-gray-500 text-sm mx-2" href="{{route('producers.privateIndex')}}">PRODUCATORI</a>
                     </div>
                     <div>
                         <form action="{{route('logout')}}" method="POST">

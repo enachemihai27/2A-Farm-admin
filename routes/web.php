@@ -9,6 +9,7 @@ use App\Http\Controllers\MapDataController;
 use App\Http\Controllers\NumberController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\PersonController;
+use App\Http\Controllers\ProducerController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -67,8 +68,11 @@ Route::post('email/send', [MailController::class, 'sendEmail'])->name('email.sen
 //Representative persons
 registerResourceRoutes('persons', PersonController::class, 'persons');
 
-//Representative persons
+//Partners persons
 registerResourceRoutes('partners', PartnerController::class, 'partners');
+
+//Producers persons
+registerResourceRoutes('producers', ProducerController::class, 'producers');
 
 
 Route::middleware(['cors'])->prefix('/api')->group(function () {
@@ -79,6 +83,7 @@ Route::middleware(['cors'])->prefix('/api')->group(function () {
     Route::get('map/data', [MapDataController::class, 'index'])->name('map.data.index');
     Route::get('map/persons', [PersonController::class, 'index'])->name('map.persons.index');
     Route::get('partners', [PartnerController::class, 'index'])->name('partners.index');
+    Route::get('producers', [ProducerController::class, 'index'])->name('producers.index');
 
     Route::get('map/data/{id}/show', [MapDataController::class, 'show'])->name('map.data.show');
     Route::get('events/{event}/show', [EventController::class, 'show'])->name('events.show');

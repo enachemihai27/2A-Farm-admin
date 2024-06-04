@@ -64,7 +64,7 @@
 
                 <a style="padding: 20px; color: white; background-color: #44bb92;"
                    class="page-card mt-3 mb-3 shadow-sm sm:rounded-lg"
-                   href="{{route('partners.privateIndex')}}">
+                   href="{{route('producers.privateIndex')}}">
                     Pagina Producatori
                 </a>
 

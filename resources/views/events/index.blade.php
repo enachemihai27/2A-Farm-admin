@@ -20,7 +20,7 @@
                             <div class="input-group flex flex-row justify-center items-center">
                                 <input type="text" name="search" class="form-control mr-2" placeholder="Cauta dupa titlul evenimentului" value="{{request('search')}}">
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-primary">Search</button>
+                                    <button type="submit" class="btn btn-primary">Cauta</button>
                                 </div>
                             </div>
                         </form>
@@ -28,7 +28,7 @@
 
                     <div class="col-md-6 d-flex justify-content-end">
                         @auth
-                            <a class="btn btn-success mx-1" href="{{route('events.create')}}">Create</a>
+                            <a class="btn btn-success mx-1" href="{{route('events.create')}}">Adauga</a>
                         @endauth
                     </div>
                 </div>
@@ -37,19 +37,19 @@
                 <table class="table table-striped table-bordered bordered-drk">
                     <thead style="background: #f2f2f2">
                     <tr>
-                        <th scope="col" style="width: 50px">Id</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Description</th>
-                        <th scope="col" style="width: 200px">Picture</th>
-                        <th scope="col" style="width: 100px">Action</th>
+                        <th scope="col" style="width: 50px">#</th>
+                        <th scope="col">Titlu</th>
+                        <th scope="col">Descriere</th>
+                        <th scope="col" style="width: 200px">Imagine</th>
+                        <th scope="col" style="width: 100px">Actiune</th>
 
 
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($events as $event)
+                    @foreach($events as $index => $event)
                         <tr>
-                            <th scope="row">{{$event->id}}</th>
+                            <th scope="row">{{$events->firstItem() + $index}}</th>
                             <td>{{$event->title}}</td>
                             <td>{{$event->description}}</td>
                             <td>

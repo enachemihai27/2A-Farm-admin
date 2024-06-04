@@ -25,7 +25,7 @@
                                        placeholder="Cauta dupa judet" value="{{request('searchJudet')}}">
 
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-primary">Search</button>
+                                    <button type="submit" class="btn btn-primary">Cauta</button>
                                 </div>
                             </div>
                         </form>
@@ -33,7 +33,7 @@
 
                     <div class="col-md-6 d-flex justify-content-end">
                         @auth
-                            <a class="btn btn-success mx-1" href="{{route('persons.create')}}">Create</a>
+                            <a class="btn btn-success mx-1" href="{{route('persons.create')}}">Adauga</a>
                         @endauth
                     </div>
                 </div>
@@ -42,23 +42,23 @@
                 <table class="table table-striped table-bordered bordered-drk">
                     <thead style="background: #f2f2f2">
                     <tr>
-                        <th scope="col" style="width: 50px">Id</th>
-                        <th scope="col" style="width: 150px">Name</th>
-                        <th scope="col">Department</th>
+                        <th scope="col" style="width: 50px">#</th>
+                        <th scope="col" style="width: 150px">Nume</th>
+                        <th scope="col">Departament</th>
                         <th scope="col">Email</th>
                         <th scope="col">Judet</th>
                         <th scope="col">Prefix</th>
-                        <th scope="col">Phone</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Telefon</th>
+                        <th scope="col">Actiune</th>
 
 
                     </tr>
                     </thead>
                     <tbody>
                     @if($persons != null)
-                        @foreach($persons as $person)
+                        @foreach($persons as $index => $person)
                             <tr>
-                                <th scope="row">{{$person->id}}</th>
+                                <th scope="row">{{$persons->firstItem() + $index}}</th>
                                 <td>{{$person->name}}</td>
                                 <td>{{$person->representativesDepartments->label}} </td>
                                 <td>{{$person->email}}</td>

@@ -21,7 +21,7 @@
                                 <input type="text" name="searchName" class="form-control mr-2"
                                        placeholder="Cauta dupa numele jobului" value="{{request('searchName')}}">
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-primary">Search</button>
+                                    <button type="submit" class="btn btn-primary">Cauta</button>
                                 </div>
                             </div>
                         </form>
@@ -29,7 +29,7 @@
 
                     <div class="col-md-6 d-flex justify-content-end">
                         @auth
-                            <a class="btn btn-success mx-1" href="{{route('jobs.create')}}">Create</a>
+                            <a class="btn btn-success mx-1" href="{{route('jobs.create')}}">Adauga</a>
                         @endauth
                     </div>
 
@@ -40,19 +40,19 @@
                 <table class="table table-striped table-bordered bordered-drk">
                     <thead style="background: #f2f2f2">
                     <tr>
-                        <th scope="col" style="width: 50px">Id</th>
-                        <th scope="col" style="width: 150px">Name</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Action</th>
+                        <th scope="col" style="width: 50px">#</th>
+                        <th scope="col" style="width: 150px">Nume</th>
+                        <th scope="col">Descriere</th>
+                        <th scope="col">Actiune</th>
 
 
                     </tr>
                     </thead>
                     <tbody>
                     @if($jobs != null)
-                        @foreach($jobs as $job)
+                        @foreach($jobs as $index => $job)
                             <tr>
-                                <th scope="row">{{$job->id}}</th>
+                                <th scope="row">{{$jobs->firstItem() + $index}}</th>
                                 <td>{{$job->name}}</td>
                                 <td>{{$job->description}}</td>
                                 <td>
