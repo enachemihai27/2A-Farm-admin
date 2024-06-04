@@ -2,29 +2,36 @@
 
 
 @section('content')
-    <div class="main-container mt-5">
+    <div class="bg-white dark:bg-gray-800 shadow-md sm:rounded-lg">
+        <div class="py-6 px-4 sm:px-6 lg:px-8">
+            <h2 class="font-semibold text-lg text-gray-800 dark:text-gray-200 leading-tight">
+                {{ __('Parteneri') }}
+            </h2>
+        </div>
+    </div>
+
+    <div class="main-container mt-5 sm:px-6 lg:px-8 sm:rounded-lg">
         @include('layouts.messages')
         <div class="card">
             <div class="card-header">
-                <div class="row">
+                <div class="flex flex-row items-center">
                     <div class="col-md-6">
-                        <h4>Partners</h4>
-                    </div>
-                    <div class="col-md-6 d-flex justify-content-end">
-                        @auth
-                            <a class="btn-sm btn-success mx-1" href="{{route('partners.create')}}">Create</a>
-                        @endauth
-                    </div>
-                    <div class="col-md-6">
-                        <form action="{{ route('partners.privateIndex') }}" method="GET" class="mb-3">
-                            <div class="input-group">
-                                <input type="text" name="search" class="form-control" placeholder="Search by name" value="{{request('search')}}">
+                        <form action="{{ route('partners.privateIndex') }}" method="GET" class="mb-2 mt-2">
+                            <div class="input-group flex flex-row justify-center items-center">
+                                <input type="text" name="search" class="form-control mr-2" placeholder="Cauta dupa nume" value="{{request('search')}}">
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-primary">Search</button>
                                 </div>
                             </div>
                         </form>
                     </div>
+
+                    <div  class="col-md-6 d-flex justify-content-end">
+                        @auth
+                            <a class="btn btn-success mx-1" href="{{route('partners.create')}}">Create</a>
+                        @endauth
+                    </div>
+
                 </div>
             </div>
             <div class="card-body">

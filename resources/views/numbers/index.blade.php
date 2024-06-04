@@ -2,23 +2,26 @@
 
 
 @section('content')
-    <div class="main-container mt-5">
+    <div class="bg-white dark:bg-gray-800 shadow-md sm:rounded-lg">
+        <div class="py-6 px-4 sm:px-6 lg:px-8">
+            <h2 class="font-semibold text-lg text-gray-800 dark:text-gray-200 leading-tight">
+                {{ __('Numerele companiei') }}
+            </h2>
+        </div>
+    </div>
+
+    <div class="main-container mt-5 sm:px-6 lg:px-8 sm:rounded-lg">
         @include('layouts.messages')
         <div class="card">
-            <div class="card-header">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h4>Company numbers</h4>
-                    </div>
-                    <div class="col-md-6 d-flex justify-content-end">
+                    <div class="d-flex justify-content-end">
                         @if($numbers->count() < 4)
-                            <a class="btn-sm btn-success mx-1" href="{{route('numbers.create')}}">Create</a>
+                            <a style="margin-right: 15px; margin-top: 15px" class="btn-sm btn-success" href="{{route('numbers.create')}}">Create</a>
                         @endif
                     </div>
-                </div>
             </div>
             <div class="card-body">
-                <table class="table table-striped table-bordered bordered-drk">
+                <table style="margin-top: 16px" class="table table-striped table-bordered bordered-drk">
                     <thead style="background: #f2f2f2">
                     <tr>
                         <th scope="col" style="width: 50px;">Id</th>

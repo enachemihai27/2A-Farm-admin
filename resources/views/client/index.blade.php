@@ -3,19 +3,17 @@
 
 @section('content')
 
-    <div class="main-container mt-5">
+    <div class="bg-white dark:bg-gray-800 shadow-md sm:rounded-lg">
+        <div class="py-6 px-4 sm:px-6 lg:px-8">
+            <h2 class="font-semibold text-lg text-gray-800 dark:text-gray-200 leading-tight">
+                {{ __('Contact') }}
+            </h2>
+        </div>
+    </div>
+
+    <div class="main-container mt-5 sm:px-6 lg:px-8 sm:rounded-lg">
         <div class="card mb-4">
-            <div class="card-header">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4>Client</h4>
-                    </div>
-                </div>
-            </div>
-
             <div class="card-body">
-
-
                 <div class="form-group">
                     <label for="name" class="form-label">Name</label>
                     <input id="name" type="text" class="form-control" name="name" value="{{$client->name}}" readonly>
