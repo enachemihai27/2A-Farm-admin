@@ -25,6 +25,7 @@
                         <a class="text-decoration-none btn-sm btn-info mx-1" href="{{route('jobs.privateIndex')}}">Jobs</a>
                         <a class="text-decoration-none btn-sm btn-info mx-1" href="{{route('events.privateIndex')}}">Events</a>
                         <a class="text-decoration-none btn-sm btn-info mx-1" href="{{route('persons.privateIndex')}}">Persons</a>
+                        <a class="text-decoration-none btn-sm btn-info mx-1" href="{{route('partners.privateIndex')}}">Partners</a>
                     </div>
                     <div>
                         <form action="{{route('logout')}}" method="POST">

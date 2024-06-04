@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(MapDataSeeder::class);
         $this->call(RepresentativePersonSeeder::class);
+        $this->call(PartnerSeeder::class);
     }
 }

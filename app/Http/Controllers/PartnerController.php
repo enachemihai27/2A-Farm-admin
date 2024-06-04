@@ -2,35 +2,36 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Models\Event;
-use App\Services\EventService;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
+use App\Models\Partner;
+use App\Services\PartnerService;
 use Illuminate\Database\QueryException;
-use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
-
-class EventController extends Controller
+class PartnerController extends Controller
 {
 
 
-    protected EventService $eventService;
+    public PartnerService $partnerService;
 
-    public function __construct(EventService $eventService)
+    /**
+     * @param PartnerService $partnerService
+     */
+    public function __construct(PartnerService $partnerService)
     {
-        $this->eventService = $eventService;
+        $this->partnerService = $partnerService;
     }
+
+
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
         try {
-            $events = $this->eventService->getAll($request);
-            if ($request->expectsJson()) {
-                return response()->json($events, 200);
-            }
+            $partners = Partner::all();
+            $partners->makeHidden(['id', 'created_at', 'updated_at']);
+            return response()->json($partners);
         }catch (QueryException $e){
             return response()->json('error', 'Unable to load record.' . $e);
         }
@@ -39,8 +40,8 @@ class EventController extends Controller
     public function privateIndex(Request $request)
     {
         try {
-            $events = $this->eventService->getAll($request);
-            return view('events.index', compact('events'));
+            $partners = $this->partnerService->index($request);
+            return view('partners.index', compact('partners'));
         }catch (QueryException $e){
             session()->flash('error', 'Unable to load records.' . $e);
         }
@@ -52,9 +53,8 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('events.create');
+        return view('partners.create');
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -62,14 +62,14 @@ class EventController extends Controller
     public function store(Request $request)
     {
         try {
-            $event = new Event();
-            $this->eventService->validate($request, $event);
-            $event->save();
-            session()->flash('success', 'Event created successfully.');
+            $partner = new Partner();
+            $this->partnerService->validate($request, $partner);
+            $partner->save();
+            session()->flash('success', 'Partner created successfully.');
         } catch (QueryException  $e) {
             session()->flash('error', 'Unable to created record.' . $e);
         }
-        return redirect()->route('events.privateIndex');
+        return redirect()->route('partners.privateIndex');
     }
 
     /**
@@ -77,12 +77,7 @@ class EventController extends Controller
      */
     public function show(string $id)
     {
-        try {
-            $event = Event::findOrFail($id);
-            return response()->json($event, 200);
-        } catch (ModelNotFoundException $e) {
-            return response()->json(['msg' => 'Record not found'], 404);
-        }
+        //
     }
 
     /**
@@ -90,13 +85,13 @@ class EventController extends Controller
      */
     public function edit(string $id)
     {
-        $event = null;
+        $partner = null;
         try {
-            $event = Event::findOrFail($id);
+            $partner = Partner::findOrFail($id);
         } catch (ModelNotFoundException $e) {
             session()->flash('error', 'Record not found.' . $e);
         }
-        return view('events.edit', compact('event'));
+        return view('partners.edit', compact('partner'));
     }
 
     /**
@@ -105,14 +100,14 @@ class EventController extends Controller
     public function update(Request $request, string $id)
     {
         try {
-            $event = Event::findOrFail($id);
-            $this->eventService->validate($request, $event);
-            $event->save();
-            session()->flash('success', 'Event updated successfully.');
+            $partner = Partner::findOrFail($id);
+            $this->partnerService->validate($request, $partner);
+            $partner->save();
+            session()->flash('success', 'Partner updated successfully.');
         } catch (ModelNotFoundException|QueryException $e) {
             session()->flash('error', 'Record not found or could not be updated.' . $e);
         }
-        return redirect()->route('events.privateIndex');
+        return redirect()->route('partners.privateIndex');
     }
 
     /**
@@ -121,11 +116,11 @@ class EventController extends Controller
     public function destroy(string $id)
     {
         try {
-            $event = Event::findOrFail($id);
-            $event->delete();
-            File::delete(public_path($event->picture));
+            $partner = Partner::findOrFail($id);
+            $partner->delete();
+            File::delete(public_path($partner->src));
 
-            session()->flash('success', 'Event deleted successfully.');
+            session()->flash('success', 'Partner deleted successfully.');
 
         } catch (QueryException|ModelNotFoundException $e) {
             session()->flash('error', 'Record not found or could not be deleted.' . $e);
