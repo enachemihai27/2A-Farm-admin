@@ -17,13 +17,13 @@
                         <a class="text-decoration-none text-black hover:text-gray-500 text-sm mx-2" href="{{route('dashboard')}}">
                             ACASA
                         </a>
-                        <a class="text-decoration-none text-black hover:text-gray-500 text-sm mx-2" href="{{route('client.privateIndex')}}">CONTACT</a>
-                        <a class="text-decoration-none text-black hover:text-gray-500 text-sm mx-2" href="{{route('numbers.privateIndex')}}">NUMERE</a>
+                    {{--    <a class="text-decoration-none text-black hover:text-gray-500 text-sm mx-2" href="{{route('client.privateIndex')}}">CONTACT</a>--}}
+                        <a class="text-decoration-none text-black hover:text-gray-500 text-sm mx-2" href="{{route('persons.privateIndex')}}">REPREZENTANTI</a>
                         <a class="text-decoration-none text-black hover:text-gray-500 text-sm mx-2" href="{{route('jobs.privateIndex')}}">CARIERA</a>
                         <a class="text-decoration-none text-black hover:text-gray-500 text-sm mx-2" href="{{route('events.privateIndex')}}">EVENIMENTE</a>
-                        <a class="text-decoration-none text-black hover:text-gray-500 text-sm mx-2" href="{{route('persons.privateIndex')}}">REPREZENTANTI</a>
                         <a class="text-decoration-none text-black hover:text-gray-500 text-sm mx-2" href="{{route('partners.privateIndex')}}">PARTENERI</a>
                         <a class="text-decoration-none text-black hover:text-gray-500 text-sm mx-2" href="{{route('producers.privateIndex')}}">PRODUCATORI</a>
+                        <a class="text-decoration-none text-black hover:text-gray-500 text-sm mx-2" href="{{route('numbers.privateIndex')}}">NUMERE</a>
                     </div>
                     <div>
                         <form action="{{route('logout')}}" method="POST">

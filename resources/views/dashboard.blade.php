@@ -26,16 +26,16 @@
                     </div>
                 </div>
 
-                <a style="padding: 20px; color: white; background-color: #44bb92"
+   {{--             <a style="padding: 20px; color: white; background-color: #44bb92"
                    class="page-card mt-3 mb-3 shadow-sm sm:rounded-lg"
                    href="{{route('client.privateIndex')}}">
                     Contact
-                </a>
+                </a>--}}
 
                 <a style="padding: 20px; color: white; background-color: #44bb92;"
                    class="page-card mt-3 mb-3 shadow-sm sm:rounded-lg"
-                   href="{{route('numbers.privateIndex')}}">
-                    Pagina Numerele companiei
+                   href="{{route('persons.privateIndex')}}">
+                    Pagina Reprezentanti
                 </a>
 
                 <a style="padding: 20px; color: white; background-color: #44bb92;"
@@ -52,12 +52,6 @@
 
                 <a style="padding: 20px; color: white; background-color: #44bb92;"
                    class="page-card mt-3 mb-3 shadow-sm sm:rounded-lg"
-                   href="{{route('persons.privateIndex')}}">
-                    Pagina Reprezentanti
-                </a>
-
-                <a style="padding: 20px; color: white; background-color: #44bb92;"
-                   class="page-card mt-3 mb-3 shadow-sm sm:rounded-lg"
                    href="{{route('partners.privateIndex')}}">
                     Pagina Parteneri
                 </a>
@@ -68,6 +62,11 @@
                     Pagina Producatori
                 </a>
 
+                <a style="padding: 20px; color: white; background-color: #44bb92;"
+                   class="page-card mt-3 mb-3 shadow-sm sm:rounded-lg"
+                   href="{{route('numbers.privateIndex')}}">
+                    Pagina Numerele companiei
+                </a>
             </div>
         </div>
 

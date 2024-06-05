@@ -40,12 +40,12 @@ function registerResourceRoutes($prefix, $controller, $name): void
 }
 
 /*Client Routes*/
-Route::middleware('auth')->prefix('client')->as('client.')->group(function () {
+/*Route::middleware('auth')->prefix('client')->as('client.')->group(function () {
     Route::get('/private', [ClientController::class, 'privateIndex'])->name('privateIndex');
     Route::post('/', [ClientController::class, 'store'])->name('store');
     Route::get('/{client}/edit', [ClientController::class, 'edit'])->name('edit');
     Route::put('/{client}', [ClientController::class, 'update'])->name('update');
-});
+});*/
 
 
 // Events Routes
