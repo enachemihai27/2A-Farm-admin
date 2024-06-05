@@ -20,10 +20,18 @@
 
         <div class="py-12">
             <div class="sm:px-6 lg:px-8 flex flex-col">
-                <div class="bg-white dark:bg-gray-800 overflow-hidden mt-3 mb-3 shadow-sm sm:rounded-lg">
+                <div class="flex flex-row justify-between items-center bg-white dark:bg-gray-800 overflow-hidden mt-3 mb-3 shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900 dark:text-gray-100">
                         {{ __("Bine ai revenit -") }} <b>{{Auth::user()->name}}</b>
                     </div>
+
+                    <div class="flex flex-row items-center justify-center p-6">
+                       <h3 class="mr-2 font-semibold"> Ultimele autentificari</h3>
+
+                            <p class="btn btn-secondary mr-2">{{Auth::user()->before_last_login_at}}</p>
+                            <p class="btn btn-success">{{Auth::user()->last_login_at}}</p>
+                    </div>
+
                 </div>
 
    {{--             <a style="padding: 20px; color: white; background-color: #44bb92"
