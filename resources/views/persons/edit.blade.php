@@ -7,12 +7,12 @@
         @include('layouts.messages')
         <div class="card mb-4">
             <div class="card-header">
-                <div class="row">
+                <div class="flex flex-row items-center">
                     <div class="col-md-6">
-                        <h4>Edit person</h4>
+                        <h4 class="text-lg font-semibold">Editeaza reprezentant</h4>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
-                        <a class="btn-sm btn-success mx-1" href="{{route('persons.privateIndex')}}">Back</a>
+                        <a class="btn btn-success mx-1" href="{{route('persons.privateIndex')}}">Inapoi</a>
                     </div>
                 </div>
             </div>
@@ -23,12 +23,12 @@
                     @method('PUT')
 
                     <div class="form-group">
-                        <label for="name" class="form-label">Name</label>
+                        <label for="name" class="form-label">Nume</label>
                         <input id="name" type="text" class="form-control" name="name" value="{{$person->name}}">
                     </div>
 
                     <div class="form-group">
-                        <label for="department" class="form-label">Department</label>
+                        <label for="department" class="form-label">Departament</label>
                         <select id="department" type="text" class="form-control" name="department">
                             <option value=" ">Select</option>
                             @foreach($departments as $department)
@@ -43,10 +43,6 @@
                         <input id="email" type="text" class="form-control" name="email" value="{{$person->email}}">
                     </div>
 
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input id="email" type="text" class="form-control" name="email" value="{{$person->email}}">
-                    </div>
 
                     <div class="form-group">
                         <label for="symbol" class="form-label">Judet</label>
@@ -65,13 +61,13 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="phone" class="form-label">Phone</label>
+                        <label for="phone" class="form-label">Telefon</label>
                         <input id="phone" type="text" class="form-control" name="phone" value="{{$person->phone}}">
                     </div>
 
 
                     <div class="form-group mt-3">
-                        <button class="btn btn-primary">Submit</button>
+                        <button class="btn btn-primary">Salveaza</button>
                     </div>
 
                 </form>

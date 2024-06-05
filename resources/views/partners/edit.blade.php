@@ -7,12 +7,12 @@
         @include('layouts.messages')
         <div class="card mb-4">
             <div class="card-header">
-                <div class="row">
+                <div class="flex flex-row items-center">
                     <div class="col-md-6">
-                        <h4>Edit partner</h4>
+                        <h4 class="text-lg font-semibold">Editeaza partener</h4>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
-                        <a class="btn-sm btn-success mx-1" href="{{route('partners.privateIndex')}}">Back</a>
+                        <a class="btn btn-success mx-1" href="{{route('partners.privateIndex')}}">Inapoi</a>
                     </div>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                     @method('PUT')
 
                     <div class="form-group">
-                        <label for="name" class="form-label">Name</label>
+                        <label for="name" class="form-label">Nume</label>
                         <input id="name" type="text" class="form-control" name="name" value="{{$partner->name}}">
                     </div>
 
@@ -34,14 +34,14 @@
 
 
                     <div class="form-group mt-4">
-                        <label for="image" class="form-label">Image</label>
+                        <label for="image" class="form-label">Imagine</label>
                         <br>
                         <img src="{{asset($partner->src)}}" alt="" width="180">
                         <input id="image" type="file" class="form-control mt-3" name="image">
                     </div>
 
                     <div class="form-group mt-3">
-                       <button class="btn btn-primary">Submit</button>
+                       <button class="btn btn-primary">Salveaza</button>
                     </div>
 
                 </form>

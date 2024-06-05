@@ -29,7 +29,7 @@ class ProducerService
     }
 
 
-/*    public function validate(Request $request, $partner)
+    public function validate(Request $request, $producer)
     {
         $request->validate([
             'name' => ['required', 'max:256'],
@@ -40,13 +40,13 @@ class ProducerService
             $request->validate([
                 'image' => ['required', 'max:2028', 'image']
             ]);
-            $path = $this->uploadImage($request, 'image', 'assets/partners');
-            $partner->src = $path;
+            $path = $this->uploadImage($request, 'image', 'assets/producers');
+            $producer->src = $path;
         }
 
-        $partner->name = $request->name;
-        $partner->link = $request->link;
+        $producer->name = $request->name;
+        $producer->link = $request->link;
 
-    }*/
+    }
 
 }

@@ -7,12 +7,12 @@
         @include('layouts.messages')
         <div class="card mb-4">
             <div class="card-header">
-                <div class="row">
+                <div class="flex flex-row items-center">
                     <div class="col-md-6">
-                        <h4>Edit job</h4>
+                        <h4 class="text-lg font-semibold">Editeaza job</h4>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
-                        <a class="btn-sm btn-success mx-1" href="{{route('jobs.privateIndex')}}">Back</a>
+                        <a class="btn btn-success mx-1" href="{{route('jobs.privateIndex')}}">Inapoi</a>
                     </div>
                 </div>
             </div>
@@ -23,17 +23,17 @@
                     @method('PUT')
 
                     <div class="form-group">
-                        <label for="name" class="form-label">Name</label>
+                        <label for="name" class="form-label">Nume</label>
                         <input id="name" type="text" class="form-control" name="name" value="{{$job->name}}">
                     </div>
 
                     <div class="form-group">
-                        <label for="description" class="form-label mt-2">Description</label>
+                        <label for="description" class="form-label mt-2">Descriere</label>
                         <textarea rows="10" id="description" type="text" class="form-control" name="description">{{$job->description}}</textarea>
                     </div>
 
                     <div class="form-group mt-3">
-                       <button class="btn btn-primary">Submit</button>
+                       <button class="btn btn-primary">Salveaza</button>
                     </div>
 
                 </form>

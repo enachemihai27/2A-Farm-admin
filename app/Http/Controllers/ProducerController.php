@@ -6,6 +6,7 @@ use App\Models\Producer;
 use App\Services\ProducerService;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ProducerController extends Controller
 {
@@ -27,7 +28,13 @@ class ProducerController extends Controller
      */
     public function index()
     {
-        //
+        try {
+            $producers = Producer::all();
+            $producers->makeHidden(['id', 'created_at', 'updated_at']);
+            return response()->json($producers);
+        }catch (QueryException $e){
+            return response()->json('error', 'Unable to load record.' . $e);
+        }
     }
 
     public function privateIndex(Request $request)
@@ -45,7 +52,7 @@ class ProducerController extends Controller
      */
     public function create()
     {
-        //
+        return view('producers.create');
     }
 
     /**
@@ -53,7 +60,15 @@ class ProducerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $producer = new Producer();
+            $this->producerService->validate($request, $producer);
+            $producer->save();
+            session()->flash('success', 'Producer created successfully.');
+        } catch (QueryException  $e) {
+            session()->flash('error', 'Unable to created record.' . $e);
+        }
+        return redirect()->route('producers.privateIndex');
     }
 
     /**
@@ -69,7 +84,13 @@ class ProducerController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $producer = null;
+        try {
+            $producer = Producer::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            session()->flash('error', 'Record not found.' . $e);
+        }
+        return view('producers.edit', compact('producer'));
     }
 
     /**
@@ -77,7 +98,15 @@ class ProducerController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        try {
+            $producer = Producer::findOrFail($id);
+            $this->producerService->validate($request, $producer);
+            $producer->save();
+            session()->flash('success', 'Producer updated successfully.');
+        } catch (ModelNotFoundException|QueryException $e) {
+            session()->flash('error', 'Record not found or could not be updated.' . $e);
+        }
+        return redirect()->route('producers.privateIndex');
     }
 
     /**
@@ -85,6 +114,17 @@ class ProducerController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try {
+            $producer = Producer::findOrFail($id);
+            $producer->delete();
+            File::delete(public_path($producer->src));
+
+            session()->flash('success', 'Producer deleted successfully.');
+
+        } catch (QueryException|ModelNotFoundException $e) {
+            session()->flash('error', 'Record not found or could not be deleted.' . $e);
+        }
+
+        return redirect()->back();
     }
 }

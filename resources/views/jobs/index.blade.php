@@ -43,7 +43,7 @@
                         <th scope="col" style="width: 50px">#</th>
                         <th scope="col" style="width: 150px">Nume</th>
                         <th scope="col">Descriere</th>
-                        <th scope="col">Actiune</th>
+                        <th scope="col" style="width: 150px;">Actiune</th>
 
 
                     </tr>
@@ -59,12 +59,12 @@
                                     <div class="d-flex">
                                         @auth
                                             <a class="btn-sm btn-primary btn mx-2"
-                                               href="{{route('jobs.edit', $job->id)}}">Edit</a>
+                                               href="{{route('jobs.edit', $job->id)}}">Editeaza</a>
 
                                             <form method="POST" action="{{route('jobs.destroy', $job->id)}}">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn-sm btn-danger btn">Delete</button>
+                                                <button class="btn-sm btn-danger btn">Sterge</button>
                                             </form>
                                         @endauth
                                     </div>

@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="d-flex justify-content-end">
                         @if($numbers->count() < 4)
-                            <a style="margin-right: 15px; margin-top: 15px" class="btn-sm btn-success" href="{{route('numbers.create')}}">Create</a>
+                            <a style="margin-right: 15px; margin-top: 15px" class="btn btn-success" href="{{route('numbers.create')}}">Adauga</a>
                         @endif
                     </div>
             </div>
@@ -25,8 +25,8 @@
                     <thead style="background: #f2f2f2">
                     <tr>
                         <th scope="col" style="width: 50px;">Id</th>
-                        <th scope="col">Number</th>
-                        <th scope="col" style="width: 150px;">Action</th>
+                        <th scope="col">Numar</th>
+                        <th scope="col" style="width: 150px;">Actiune</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -37,7 +37,7 @@
                             <td>
                                 <div class="d-flex">
                                     @auth
-                                        <a class="btn-sm btn-primary btn mx-2" href="{{route('numbers.edit', $number->id)}}">Edit</a>
+                                        <a class="btn-sm btn-primary btn mx-2" href="{{route('numbers.edit', $number->id)}}">Editeaza</a>
                                     @endauth
                                 </div>
                             </td>

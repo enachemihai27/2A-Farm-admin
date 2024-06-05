@@ -7,12 +7,12 @@
         @include('layouts.messages')
         <div class="card mb-4">
             <div class="card-header">
-                <div class="row">
+                <div class="flex flex-row items-center">
                     <div class="col-md-6">
-                        <h4>Add numbers</h4>
+                        <h4 class="text-lg font-semibold">Adauga numar</h4>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
-                        <a class="btn-sm btn-success mx-1" href="{{route('numbers.privateIndex')}}">Back</a>
+                        <a class="btn btn-success mx-1" href="{{route('numbers.privateIndex')}}">Inapoi</a>
                     </div>
                 </div>
             </div>

@@ -15,7 +15,7 @@
         <div class="card mb-4">
             <div class="card-body">
                 <div class="form-group">
-                    <label for="name" class="form-label">Name</label>
+                    <label for="name" class="form-label">Nume</label>
                     <input id="name" type="text" class="form-control" name="name" value="{{$client->name}}" readonly>
                 </div>
 
@@ -25,25 +25,25 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="primary_phone_number" class="form-label">Primary phone</label>
+                    <label for="primary_phone_number" class="form-label">Telefon principal</label>
                     <input id="primary_phone_number" type="text" class="form-control" name="primary_phone_number"
                            value="{{$client->primary_phone_number}}" readonly>
                 </div>
 
                 <div class="form-group">
-                    <label for="secondary_phone_number" class="form-label">Secondary phone</label>
+                    <label for="secondary_phone_number" class="form-label">Telefon secundar</label>
                     <input id="secondary_phone_number" type="text" class="form-control" name="secondary_phone_number"
                            value="{{$client->secondary_phone_number}}" readonly>
                 </div>
 
                 <div class="form-group">
-                    <label for="address" class="form-label">Address</label>
+                    <label for="address" class="form-label">Adresa</label>
                     <input id="address" type="text" class="form-control" name="address" value="{{$client->address}}"
                            readonly>
                 </div>
 
                 <div class="form-group">
-                    <label for="order_number" class="form-label">Order number</label>
+                    <label for="order_number" class="form-label">Nr.Ord.Reg.Com.</label>
                     <input id="order_number" type="text" class="form-control" name="order_number"
                            value="{{$client->order_number}}" readonly>
                 </div>
@@ -63,7 +63,7 @@
 
                 @auth
                     <div class="d-flex justify-content-end mt-4">
-                        <a class="btn-sm btn-success" href="{{route('client.edit', $client->id)}}">Edit</a>
+                        <a class="btn btn-success" href="{{route('client.edit', $client->id)}}">Editeaza</a>
                     </div>
                 @endauth
             </div>

@@ -12,12 +12,12 @@
 
         <div class="card mb-4">
             <div class="card-header">
-                <div class="row">
+                <div class="flex flex-row items-center">
                     <div class="col-md-6">
-                        <h4>Edit client</h4>
+                        <h4 class="text-lg font-semibold">Editeaza contact</h4>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
-                        <a class="btn-sm btn-success mx-1" href="{{route('client.privateIndex')}}">Back</a>
+                        <a class="btn btn-success mx-1" href="{{route('client.privateIndex')}}">Inapoi</a>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                     @csrf
                     @method('PUT')
                     <div class="form-group">
-                        <label for="name" class="form-label">Name</label>
+                        <label for="name" class="form-label">Nume</label>
                         <input id="name" type="text" class="form-control" name="name" value="{{$client->name}}">
                     </div>
 
@@ -37,22 +37,22 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="primary_phone_number" class="form-label">Primary phone</label>
+                        <label for="primary_phone_number" class="form-label">Telefon principal</label>
                         <input id="primary_phone_number" type="text" class="form-control" name="primary_phone_number" value="{{$client->primary_phone_number}}">
                     </div>
 
                     <div class="form-group">
-                        <label for="secondary_phone_number" class="form-label">Secondary phone</label>
+                        <label for="secondary_phone_number" class="form-label">Telefon secundar</label>
                         <input id="secondary_phone_number" type="text" class="form-control" name="secondary_phone_number" value="{{$client->secondary_phone_number}}">
                     </div>
 
                     <div class="form-group">
-                        <label for="address" class="form-label">Address</label>
+                        <label for="address" class="form-label">Adresa</label>
                         <input id="address" type="text" class="form-control" name="address" value="{{$client->address}}">
                     </div>
 
                     <div class="form-group">
-                        <label for="order_number" class="form-label">Order number</label>
+                        <label for="order_number" class="form-label">Nr.Ord.Reg.Com.</label>
                         <input id="order_number" type="text" class="form-control" name="order_number" value="{{$client->order_number}}">
                     </div>
 
@@ -67,7 +67,7 @@
                     </div>
                     @auth
                         <div class="form-group mt-3">
-                           <button class="btn btn-primary">Submit</button>
+                           <button class="btn btn-primary">Salveaza</button>
                         </div>
                     @endauth
                 </form>

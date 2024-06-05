@@ -58,12 +58,12 @@
                             <td>
                                 <div class="d-flex">
                                     @auth
-                                        <a class="btn-sm btn-primary btn mx-2" href="{{route('events.edit', $event->id)}}">Edit</a>
+                                        <a class="btn-sm btn-primary btn mx-2" href="{{route('events.edit', $event->id)}}">Editeaza</a>
 
                                         <form method="POST" action="{{route('events.destroy', $event->id)}}">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="btn-sm btn-danger btn">Delete</button>
+                                            <button class="btn-sm btn-danger btn">Sterge</button>
                                         </form>
                                     @endauth
                                 </div>
