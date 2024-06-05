@@ -64,7 +64,7 @@ class PersonController extends Controller
             $newPerson = new Person();
             $person = $this->personService->validateAndAdd($request, $newPerson);
             $person->save();
-            session()->flash('success', 'Person created successfully.');
+            session()->flash('success', 'Reprezentant creat cu succes.');
         } catch (QueryException $e) {
             return redirect()->back()->withErrors(['error' => 'Unable to create record. ' . $e->getMessage()]);
         }
@@ -109,7 +109,7 @@ class PersonController extends Controller
             $editPerson = Person::findOrFail($id);
             $person = $this->personService->validateAndAdd($request, $editPerson);
             $person->save();
-            session()->flash('success', 'Person updated successfully.');
+            session()->flash('success', 'Reprezentant editat cu succes.');
         } catch (QueryException $e) {
             return redirect()->back()->withErrors(['error' => 'Unable to create record. ' . $e->getMessage()]);
         }
@@ -124,7 +124,7 @@ class PersonController extends Controller
         try {
             $person = Person::findOrFail($id);
             $person->delete();
-            session()->flash('success', 'Person deleted successfully.');
+            session()->flash('success', 'Reprezentant sters cu success.');
         } catch (ModelNotFoundException|QueryException $e) {
             return redirect()->back()->withErrors(['error' => 'Unable to delete record. ' . $e->getMessage()]);
         }

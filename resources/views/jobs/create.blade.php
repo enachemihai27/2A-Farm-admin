@@ -32,6 +32,13 @@
                         <textarea id="description" rows="10" type="text" class="form-control" name="description">{{old('description')}}</textarea>
                     </div>
 
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select name="status" id="status" class="form-control">
+                            <option value="1">Activ</option>
+                            <option value="0">Inactiv</option>
+                        </select>
+                    </div>
 
 
                     <div class="form-group mt-3">

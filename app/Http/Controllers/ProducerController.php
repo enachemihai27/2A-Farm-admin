@@ -64,7 +64,7 @@ class ProducerController extends Controller
             $producer = new Producer();
             $this->producerService->validate($request, $producer);
             $producer->save();
-            session()->flash('success', 'Producer created successfully.');
+            session()->flash('success', 'Producator creat cu succes.');
         } catch (QueryException  $e) {
             session()->flash('error', 'Unable to created record.' . $e);
         }
@@ -102,7 +102,7 @@ class ProducerController extends Controller
             $producer = Producer::findOrFail($id);
             $this->producerService->validate($request, $producer);
             $producer->save();
-            session()->flash('success', 'Producer updated successfully.');
+            session()->flash('success', 'Producator editat cu succes.');
         } catch (ModelNotFoundException|QueryException $e) {
             session()->flash('error', 'Record not found or could not be updated.' . $e);
         }
@@ -119,7 +119,7 @@ class ProducerController extends Controller
             $producer->delete();
             File::delete(public_path($producer->src));
 
-            session()->flash('success', 'Producer deleted successfully.');
+            session()->flash('success', 'Producator sters cu succes.');
 
         } catch (QueryException|ModelNotFoundException $e) {
             session()->flash('error', 'Record not found or could not be deleted.' . $e);

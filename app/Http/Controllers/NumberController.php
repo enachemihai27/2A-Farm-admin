@@ -29,7 +29,7 @@ class NumberController extends Controller
     }
 
 
-    public function privateIndex(Request $request)
+    public function privateIndex()
     {
         try {
             $numbers = Number::all();
@@ -101,7 +101,7 @@ class NumberController extends Controller
             $number = Number::findOrFail($id);
             $this->validateAndUpload($request, $number);
             $number->save();
-            return redirect()->route('numbers.privateIndex')->with('success', 'Record saved successfully.');
+            return redirect()->route('numbers.privateIndex')->with('success', 'Numar editat cu succes.');
         } catch (ModelNotFoundException|QueryException $e) {
             return redirect()->route('numbers.create')->withErrors(['error' => 'Unable to save record. ' . $e->getMessage()]);
         }

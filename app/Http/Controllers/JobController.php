@@ -26,7 +26,7 @@ class JobController extends Controller
     public function index(Request $request)
     {
         try {
-            $jobs = $this->jobService->getAll($request);
+            $jobs = $this->jobService->getAll($request, true);
 
             if ($request->expectsJson()) {
                 return response()->json($jobs);
@@ -39,7 +39,7 @@ class JobController extends Controller
     public function privateIndex(Request $request)
     {
         try {
-            $jobs = $this->jobService->getAll($request);
+            $jobs = $this->jobService->getAll($request, false);
             return view('jobs.index', compact('jobs'));
         } catch (QueryException $e) {
             session()->flash('error', 'Unable to load records.' . $e);
@@ -66,7 +66,7 @@ class JobController extends Controller
             $job = new Job();
             $this->jobService->validate($request, $job);
             $job->save();
-            session()->flash('success', 'Jobs created successfully.');
+            session()->flash('success', 'Job creat cu succes.');
         } catch (QueryException $e) {
             return redirect()->back()->withErrors(['error' => 'Unable to create record. ' . $e->getMessage()]);
         }
@@ -97,7 +97,7 @@ class JobController extends Controller
             $job = Job::findOrFail($id);
             $this->jobService->validate($request, $job);
             $job->save();
-            session()->flash('success', 'Job updated successfully.');
+            session()->flash('success', 'Job editat cu succes.');
         } catch (ModelNotFoundException|QueryException $e) {
             return redirect()->back()->withErrors(['error' => 'Unable to update record. ' . $e->getMessage()]);
         }
@@ -112,8 +112,13 @@ class JobController extends Controller
     {
         try {
             $job = Job::findOrFail($id);
-            $job->delete();
-            session()->flash('success', 'Job deleted successfully.');
+            //$job->delete();
+
+            $job->status = 0;
+
+            $job->save();
+
+            session()->flash('success', 'Job dezactivat cu succes.');
         } catch (ModelNotFoundException|QueryException $e) {
             return redirect()->back()->withErrors(['error' => 'Unable to delete record. ' . $e->getMessage()]);
         }

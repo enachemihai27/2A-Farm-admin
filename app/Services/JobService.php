@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class JobService
 {
 
-    public function getAll(Request $request)
+    public function getAll(Request $request, bool $forApi)
     {
 
         $jobs = null;
@@ -20,6 +20,9 @@ class JobService
 
         try {
             $jobs = Job::query()
+                ->when($forApi, function ($query) {
+                    return $query->where('status', 1);
+                })
                 ->when($searchName, function ($query, $searchName) {
                     return $query->where('positions_of_employment.name', 'like', '%' . $searchName . '%');
                 })
@@ -37,7 +40,8 @@ class JobService
     {
         $request->validate([
             'name' => ['required', 'max:256'],
-            'description' => 'required'
+            'description' => 'required',
+            'status' => 'required'
         ]);
 
         if(empty($job->name)){
@@ -48,6 +52,7 @@ class JobService
 
         $job->name = $request->name;
         $job->description = $request->description;
+        $job->status = $request->status;
 
     }
 

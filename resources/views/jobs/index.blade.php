@@ -43,6 +43,7 @@
                         <th scope="col" style="width: 50px">#</th>
                         <th scope="col" style="width: 150px">Nume</th>
                         <th scope="col">Descriere</th>
+                        <th scope="col" style="width: 100px;">Status</th>
                         <th scope="col" style="width: 150px;">Actiune</th>
 
 
@@ -56,6 +57,13 @@
                                 <td>{{$job->name}}</td>
                                 <td>{{$job->description}}</td>
                                 <td>
+                                    @if($job->status == 1)
+                                        <i class='text-green-600'>Activ</i>
+                                    @else
+                                        <i class='text-red-600'>Inactiv</i>
+                                    @endif
+                                    </td>
+                                <td>
                                     <div class="d-flex">
                                         @auth
                                             <a class="btn-sm btn-primary btn mx-2"
@@ -64,7 +72,7 @@
                                             <form method="POST" action="{{route('jobs.destroy', $job->id)}}">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn-sm btn-danger btn">Sterge</button>
+                                                <button class="btn-sm btn-warning">Dezactiveaza</button>
                                             </form>
                                         @endauth
                                     </div>

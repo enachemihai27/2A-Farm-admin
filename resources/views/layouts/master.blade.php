@@ -42,12 +42,12 @@
             </a>
 
             <div>
-                  <span class="text-muted fw-bold me-2">
-                {{date('Y')}}
-              </span>
                 <a class="text-gray-800 text-hover-primary" href="https://www.2afarm.ro" target="_blank">
                     &copy; 2A farm
                 </a>
+                <span class="text-muted fw-bold me-2">
+                    {{date('Y')}}
+                </span>
             </div>
         </div>
     </footer>

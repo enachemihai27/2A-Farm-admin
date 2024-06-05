@@ -65,7 +65,7 @@ class PartnerController extends Controller
             $partner = new Partner();
             $this->partnerService->validate($request, $partner);
             $partner->save();
-            session()->flash('success', 'Partner created successfully.');
+            session()->flash('success', 'Partener creat cu succes.');
         } catch (QueryException  $e) {
             session()->flash('error', 'Unable to created record.' . $e);
         }
@@ -103,7 +103,7 @@ class PartnerController extends Controller
             $partner = Partner::findOrFail($id);
             $this->partnerService->validate($request, $partner);
             $partner->save();
-            session()->flash('success', 'Partner updated successfully.');
+            session()->flash('success', 'Partner editat cu succes.');
         } catch (ModelNotFoundException|QueryException $e) {
             session()->flash('error', 'Record not found or could not be updated.' . $e);
         }
@@ -120,7 +120,7 @@ class PartnerController extends Controller
             $partner->delete();
             File::delete(public_path($partner->src));
 
-            session()->flash('success', 'Partner deleted successfully.');
+            session()->flash('success', 'Partener sters cu succes.');
 
         } catch (QueryException|ModelNotFoundException $e) {
             session()->flash('error', 'Record not found or could not be deleted.' . $e);

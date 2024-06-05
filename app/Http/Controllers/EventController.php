@@ -65,7 +65,7 @@ class EventController extends Controller
             $event = new Event();
             $this->eventService->validate($request, $event);
             $event->save();
-            session()->flash('success', 'Event created successfully.');
+            session()->flash('success', 'Eveniment creat cu succes.');
         } catch (QueryException  $e) {
             session()->flash('error', 'Unable to created record.' . $e);
         }
@@ -108,7 +108,7 @@ class EventController extends Controller
             $event = Event::findOrFail($id);
             $this->eventService->validate($request, $event);
             $event->save();
-            session()->flash('success', 'Event updated successfully.');
+            session()->flash('success', 'Eveniment editat cu succes.');
         } catch (ModelNotFoundException|QueryException $e) {
             session()->flash('error', 'Record not found or could not be updated.' . $e);
         }
@@ -125,7 +125,7 @@ class EventController extends Controller
             $event->delete();
             File::delete(public_path($event->picture));
 
-            session()->flash('success', 'Event deleted successfully.');
+            session()->flash('success', 'Eveniment sters cu succes.');
 
         } catch (QueryException|ModelNotFoundException $e) {
             session()->flash('error', 'Record not found or could not be deleted.' . $e);

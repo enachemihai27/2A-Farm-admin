@@ -32,6 +32,14 @@
                         <textarea rows="10" id="description" type="text" class="form-control" name="description">{{$job->description}}</textarea>
                     </div>
 
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select name="status" id="status" class="form-control">
+                            <option {{$job->status == 1 ? 'selected' : ''}} value="1">Activ</option>
+                            <option {{$job->status == 0 ? 'selected' : ''}} value="0">Inactiv</option>
+                        </select>
+                    </div>
+
                     <div class="form-group mt-3">
                        <button class="btn btn-primary">Salveaza</button>
                     </div>
