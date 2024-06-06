@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\History;
 use App\Models\Job;
 use App\Services\JobService;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -32,10 +33,11 @@ class JobController extends Controller
                 return response()->json($jobs);
             }
 
-        }catch (QueryException $e){
+        } catch (QueryException $e) {
             return response()->json('error', 'Unable to load record.' . $e);
         }
     }
+
     public function privateIndex(Request $request)
     {
         try {
@@ -53,8 +55,6 @@ class JobController extends Controller
     {
         return view('jobs.create');
     }
-
-
 
 
     /**
@@ -125,4 +125,12 @@ class JobController extends Controller
 
         return redirect()->back();
     }
+
+    public function history(Request $request)
+    {
+        $rows = $this->jobService->history($request);
+        return view('history.historyJobs', compact('rows'));
+    }
+
+
 }

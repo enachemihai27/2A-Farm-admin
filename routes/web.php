@@ -59,7 +59,7 @@ registerResourceRoutes('numbers', NumberController::class, 'numbers');
 
 // Jobs Routes
 registerResourceRoutes('jobs', JobController::class, 'jobs');
-
+Route::get('jobs/history', [JobController::class, 'history'])->name('jobs.history');
 
 // Email
 Route::post('email/send', [MailController::class, 'sendEmail'])->name('email.send');

@@ -29,7 +29,8 @@
 
                     <div class="col-md-6 d-flex justify-content-end">
                         @auth
-                            <a class="btn btn-success mx-1" href="{{route('jobs.create')}}">Adauga</a>
+                            <a class="btn btn-secondary mr-2" href="{{route('jobs.history')}}">Vezi istoric</a>
+                            <a class="btn btn-success" href="{{route('jobs.create')}}">Adauga</a>
                         @endauth
                     </div>
 
@@ -69,11 +70,13 @@
                                             <a class="btn-sm btn-primary btn mx-2"
                                                href="{{route('jobs.edit', $job->id)}}">Editeaza</a>
 
-                                            <form method="POST" action="{{route('jobs.destroy', $job->id)}}">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button class="btn-sm btn-warning">Dezactiveaza</button>
-                                            </form>
+                                            @if($job->status == 1)
+                                                <form method="POST" action="{{route('jobs.destroy', $job->id)}}">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn-sm btn-warning">Dezactiveaza</button>
+                                                </form>
+                                            @endif
                                         @endauth
                                     </div>
                                 </td>

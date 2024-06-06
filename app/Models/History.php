@@ -11,5 +11,5 @@ class History extends Model
 
     protected $fillable = ['user_id','action', 'table_name', 'old_data', 'new_data'];
 
-    protected $table = 'job_table_histories';
+    protected $table = 'positions_of_employment_table_history';
 }

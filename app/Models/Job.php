@@ -19,7 +19,7 @@ class Job extends Model
             History::create([
                 'action' => 'created',
                 'table_name' => 'positions_of_employment',
-                'user_name' => Auth()->user()->name,
+                'user_name' => auth()->user()->name . '- Admin',
                 'new_data' => json_encode($model->toArray())
             ]);
         });
@@ -28,20 +28,9 @@ class Job extends Model
             History::create([
                 'action' => 'updated',
                 'table_name' => 'positions_of_employment',
-                'user_name' => Auth()->user()->name,
+                'user_name' => auth()->user()->name . '- Admin',
                 'old_data' => json_encode($model->getOriginal()),
                 'new_data' => json_encode($model->toArray())
-            ]);
-
-
-        });
-
-        static::deleted(function ($model) {
-            History::create([
-                'action' => 'deleted',
-                'table_name' => 'positions_of_employment',
-                'user_name' => Auth()->user()->name,
-                'old_data' => json_encode($model->toArray())
             ]);
         });
     }

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('action');
             $table->string('table_name');
-            $table->string('user_name');
+            $table->string('user_name')->default('2A Farm - Admin');
             $table->text('old_data')->nullable();
             $table->text('new_data')->nullable();
             $table->timestamps();
